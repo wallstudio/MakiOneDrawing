@@ -1,29 +1,7 @@
-name: Main
+name: Regen Summary
 
 on:
-  workflow_dispatch :
-    inputs:
-      command:
-        description: 'NotificationMorning|NotificationStart|NotificationFinish|AccumulationPosts'
-        required: false
-        default: ''
-      actionDate:
-        description: 'date yyyy/MM/dd HH:mm +09:00'
-        required: false
-        default: ''
-      eventDate:
-        description: 'date yyyy/MM/dd HH:mm +09:00'
-        required: false
-        default: ''
-      nextDate:
-        description: 'next yyyy/MM/dd HH:mm +09:00'
-        required: false
-        default: ''
-      general:
-        description: 'general'
-        required: false
-        default: ''
-
+  push :
 jobs:
   build:
 
@@ -46,12 +24,11 @@ jobs:
         --access-token "${{ secrets.ACCESS_TOKEN }}"
         --access-token-secret "${{ secrets.ACCESS_TOKEN_SECRET }}"
         --google-service-account-jwt "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JWT }}"
-        
-        --command "${{ github.event.inputs.command }}"
-        --actionDate "${{ github.event.inputs.actionDate }}"
-        --eventDate "${{ github.event.inputs.eventDate }}"
-        --nextDate "${{ github.event.inputs.nextDate }}"
-        --general "${{ github.event.inputs.general }}"
+        --command "RegeneratSummaryPage"
+        --actionDate "null"
+        --eventDate "2100/1/1"
+        --nextDate "null"
+        --general "regen summary"
     - name: Git
       run: |
         if test -z `git diff HEAD`; then
@@ -62,7 +39,7 @@ jobs:
           git add -A
           git config --local user.email "example.com"
           git config --local user.name "bot"
-          git commit -m "AUTO COMMIT (GITHUB ACTION WORKFLOW)"
+          git commit -m "AUTO COMMIT (Regen Summary)"
           git pull --no-rebase
           git push
         fi

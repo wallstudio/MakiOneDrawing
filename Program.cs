@@ -7,37 +7,37 @@ using System.Threading;
 
 namespace MakiOneDrawingBot
 {
-    // https://www.slideshare.net/ngzm/oauth-10-oauth-20-openid-connect
-
     static class Program
     {
+        static Program() => CultureInfo.CurrentCulture = new CultureInfo("ja-JP");
+
         static void Main(string[] args)
         {
-            CultureInfo.CurrentCulture = new CultureInfo("ja-JP");
-
-            var command = args.SkipWhile(a => a != "--command").Skip(1).FirstOrDefault() ?? throw new ArgumentException("--command");
             var actions = new Actions(
-                twitterApiKey: args.SkipWhile(a => a != "--twitter-api-key").Skip(1).FirstOrDefault() ?? throw new ArgumentException("--twitter-api-key"),
-                twitterApiSecret: args.SkipWhile(a => a != "--twitter-api-secret").Skip(1).FirstOrDefault() ?? throw new ArgumentException("--twitter-api-secret"),
-                bearerToken: args.SkipWhile(a => a != "--bearer-token").Skip(1).FirstOrDefault() ?? throw new ArgumentException("--bearer-token"),
-                accessToken: args.SkipWhile(a => a != "--access-token").Skip(1).FirstOrDefault() ?? throw new ArgumentException("--access-token"),
-                accessTokenSecret: args.SkipWhile(a => a != "--access-token-secret").Skip(1).FirstOrDefault() ?? throw new ArgumentException("--access-token-secret"),
-                googleServiceAccountJwt: args.SkipWhile(a => a != "--google-service-account-jwt").Skip(1).FirstOrDefault() ?? throw new ArgumentException("--google-service-account-jwt"),
-                date: args.SkipWhile(a => a != "--eventDate").Skip(1).FirstOrDefault(),
-                next: args.SkipWhile(a => a != "--nextDate").Skip(1).FirstOrDefault(),
-                general: args.SkipWhile(a => a != "--general").Skip(1).FirstOrDefault());
+                // https://www.slideshare.net/ngzm/oauth-10-oauth-20-openid-connect
+                twitterApiKey: args.GetOption("twitter-api-key"),
+                twitterApiSecret: args.GetOption("twitter-api-secret"),
+                bearerToken: args.GetOption("bearer-token"),
+                accessToken: args.GetOption("access-token"),
+                accessTokenSecret: args.GetOption("access-token-secret"),
+                googleServiceAccountJwt: args.GetOption("google-service-account-jwt"),
+                date: args.GetOption("eventDate"), // nullable
+                next: args.GetOption("nextDate"), // nullable
+                general: args.GetOption("general")); // nullable
 
-            if(DateTime.TryParse(args.SkipWhile(a => a != "--actionDate").Skip(1).FirstOrDefault(), out var actionDate))
+            // 指定時間まで待つ（タイマーの誤差を吸収する）
+            if (DateTime.TryParse(args.GetOption("actionDate"), out var actionDate))
             {
                 Console.WriteLine($"delay {actionDate} - {DateTime.Now}");
                 var delay = actionDate - DateTime.Now;
-                if(delay.TotalMinutes > 5) throw new Exception($"too long delay. {delay}");
-                if(delay.TotalSeconds > 0)
+                if (delay.TotalMinutes > 10) throw new Exception($"too long delay. {delay}");
+                if (delay.TotalSeconds > 0)
                 {
                     Thread.Sleep(delay);
                 }
             }
 
+            var command = args.GetOption("command");
             switch (command)
             {
                 case nameof(Actions.NotificationMorning):
@@ -52,15 +52,13 @@ namespace MakiOneDrawingBot
                 case nameof(Actions.AccumulationPosts):
                     actions.AccumulationPosts();
                     break;
-                case "Interactive":
+                case nameof(Actions.RegeneratSummaryPage):
+                    actions.RegeneratSummaryPage();
+                    break;
+                case "null":
+                    Console.Write("Command: ");
                     var newCommand = Console.ReadLine();
                     Main(args.Select(a => a == command ? newCommand : a).ToArray());
-                    break;
-                case "TestSequential":
-                    actions.NotificationMorning();
-                    actions.NotificationStart();
-                    actions.NotificationFinish();
-                    actions.AccumulationPosts();
                     break;
                 case nameof(Views.GenerateTextImage):
                     File.WriteAllBytes("o.png", Views.GenerateTextImage("オープニング\n\nお月見🎑"));
@@ -68,6 +66,14 @@ namespace MakiOneDrawingBot
                 default:
                     throw new ArgumentException($"--command={command}");
             }
+        }
+
+        static string GetOption(this string[] args, string label)
+        {
+            var value = args.SkipWhile(a => a != $"--{label}").Skip(1).FirstOrDefault();
+            if(value == null) throw new ArgumentException($"{label} value is null");
+            if(value.StartsWith("--")) throw new ArgumentException($"{label} value is other option label? ({value})");
+            return value;
         }
     }
 }

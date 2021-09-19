@@ -119,7 +119,7 @@ namespace MakiOneDrawingBot
             return buffer.ToArray();
         }
     
-        public static string Dashboard(UserResponse me, Recentry[] recently, Post[] postRanking, Post[] entryRanking, Post[] continueRanking)
+        public static string Dashboard(User me, Recentry[] recently, Post[] postRanking, Post[] entryRanking, Post[] continueRanking)
         {
             var medias = Enumerable.Range(0, 5)
                 .Select(i => LinkedMedia(
@@ -134,10 +134,10 @@ namespace MakiOneDrawingBot
 
 ## 最近の作品
 
-| 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ |
-| :---: | :---: | :---: | :---: | :---: |
+| 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ | 6️⃣ | 7️⃣ | 8️⃣ | 9️⃣ | 🔟 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | {string.Join(" | ", medias)} |
-| {string.Join(" | ", Enumerable.Range(0, 5).Select(i => LinkedName(recently.ElementAtOrDefault(i)?.User)))} |
+| {string.Join(" | ", Enumerable.Range(0, 10).Select(i => LinkedName(recently.ElementAtOrDefault(i)?.User)))} |
 
 ## ランキング
 
@@ -196,7 +196,7 @@ namespace MakiOneDrawingBot
 
         static string LinkedMedia(string screenName, string statusId, string mediaUrl) => $"[![]({mediaUrl}:thumb)](https://twitter.com/{screenName}/status/{statusId})";
         static string LinkedName(User user) => $"[@{user?.ScreenName}](https://twitter.com/{user?.ScreenName})";
-        static string LinkedImage(User user) => $"[![@{user?.ScreenName}]({user?.ProfileImageUrlHttps.Replace("_normal.jpg", "_bigger.jpg")})](https://twitter.com/{user?.ScreenName})";
+        static string LinkedImage(User user) => $"[![@{user?.ScreenName}]({user?.ProfileImageUrlHttps.Replace("_normal.", "_bigger.")})](https://twitter.com/{user?.ScreenName})";
 
     }
 

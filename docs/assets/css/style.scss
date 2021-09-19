@@ -8,3 +8,8 @@ table {
   overflow-x: scroll;
   white-space: nowrap;
 }
+
+// 幅を狭めると、テーブル内画像のサイズが何故か均一でなくなるので
+table img {
+  max-width: none;
+}

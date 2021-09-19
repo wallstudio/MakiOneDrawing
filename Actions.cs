@@ -14,6 +14,7 @@ namespace MakiOneDrawingBot
         static readonly string DB_SHEET_ID = "1Un15MnW9Z2ChwSdsxdAVw495uSmJN4jBHngcBpYxo_0";
         static readonly string HELP_FILE = "docs/index.md";
         static readonly string HELP_CONFIG_FILE = "docs/_config.yml";
+        static readonly string HELP_HISTORY_FILE = "docs/history.yml";
         static readonly Serializer SERIALIZER = new();
         readonly string googleServiceAccountJwt;
         readonly DateTime eventDate;
@@ -34,9 +35,7 @@ namespace MakiOneDrawingBot
             this.general = general;
         }
 
-        /// <summary>
-        /// 朝の予告ツイートを投げる
-        /// </summary>
+        /// <summary> 朝の予告ツイートを投げる </summary>
         public void NotificationMorning()
         {
             using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
@@ -58,9 +57,7 @@ namespace MakiOneDrawingBot
             schedule["ts_utc_morning_status"] = TimeStampUtc;
         }
 
-        /// <summary>
-        /// ワンドロ開始のツイートを投げる
-        /// </summary>
+        /// <summary> ワンドロ開始のツイートを投げる </summary>
         public void NotificationStart()
         {
             using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
@@ -83,9 +80,7 @@ namespace MakiOneDrawingBot
             schedule["ts_utc_start_status"] = TimeStampUtc;
         }
 
-        /// <summary>
-        /// ワンドロ終了のツイートを投げる
-        /// </summary>
+        /// <summary> ワンドロ終了のツイートを投げる </summary>
         public void NotificationFinish()
         {
             using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
@@ -104,9 +99,7 @@ namespace MakiOneDrawingBot
             schedule["ts_utc_finish_status"] = TimeStampUtc;
         }
 
-        /// <summary>
-        /// 投稿を集計してRTとランキングを更新する
-        /// </summary>
+        /// <summary> 投稿を集計してRTとランキングを更新する </summary>
         public void AccumulationPosts()
         {
             using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
@@ -119,7 +112,7 @@ namespace MakiOneDrawingBot
             var format = @"yyy-MM-dd_HH\:mm\:ss_JST";
             var query = schedule["query"] = $"{Views.HASH_TAG} -from:{me.ScreenName} exclude:retweets since:{since.ToString(format)} until:{until.ToString(format)}"; // https://gist.github.com/cucmberium/e687e88565b6a9ca7039
             var tweets = EnumerateSearchTweets(
-                q: query, 
+                q: query,
                 result_type: "recent",
                 until: DateTime.UtcNow.ToString("yyy-MM-dd"),
                 count: 100,
@@ -140,7 +133,7 @@ namespace MakiOneDrawingBot
             schedule["ts_accumulation_status"] = TimeStamp;
             schedule["ts_utc_accumulation_status"] = TimeStampUtc;
 
-            // Twitter
+            // Reflect Twitter
             foreach (var tweet in tweets)
             {
                 tokens.Favorites.Create(tweet.Id);
@@ -155,11 +148,10 @@ namespace MakiOneDrawingBot
                 Console.WriteLine($"Follow {user.ScreenName}");
             }
 
-            // Aggregate
-            var posts = tables["post"];
+            // Reflect DB
             foreach (var tweet in tweets)
             {
-                var post = posts.Add(tweet.Id.ToString());
+                var post = tables["post"].Add(tweet.Id.ToString());
                 post["id_status"] = tweet.Id.ToString();
                 post["id_schedule"] = schedule["id"];
                 post["id_user"] = tweet.User.Id.ToString();
@@ -169,45 +161,22 @@ namespace MakiOneDrawingBot
                 post["url_user_icon"] = tweet.User.ProfileImageUrlHttps;
                 post["url_media"] = tweet.Entities?.Media?.FirstOrDefault()?.MediaUrlHttps;
             }
-            Console.WriteLine($"Total post: {posts.Count()} Total Users: {posts.Select(p => long.Parse(p["id_user"])).Distinct().Count()}");
-            var userInfoTable = posts.Any()
-                // https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-users-lookup
-                ? posts.Select(p => long.Parse(p["id_user"]))
-                    .Distinct()
-                    .Select((id, i)=> (id, i))
-                    .GroupBy(t => t.i / 95, t => t.id)
-                    .SelectMany(ids => tokens.Users.Lookup(ids))
-                    .ToArray()
-                : Enumerable.Empty<User>();
-            var recently = posts
-                .OrderByDescending(pst => DateTime.Parse(pst["ts_utc_post"]))
-                .Select(p => new Recentry(userInfoTable.First(u => u.Id == long.Parse(p["id_user"])), p))
-                .ToArray();
-            var postRanking = posts
-                .GroupBy(pst => pst["id_user"])
-                .Select(g => new Post(g.Key, userInfoTable.First(u => u.Id == long.Parse(g.Key)), g, g.Count()))
-                .OrderBy(info => info.Count)
-                .ToArray();
-            var entryRanking = posts
-                .GroupBy(pst => pst["id_user"])
-                .Select(g => new Post(g.Key, userInfoTable.First(u => u.Id == long.Parse(g.Key)), g, g.Select(p => p["id_schedule"]).Distinct().Count()))
-                .OrderBy(info => info.Count)
-                .ToArray();
-            var continueRanking = posts
-                .GroupBy(pst => pst["id_user"])
-                .Select(g => new Post(
-                    Id: g.Key,
-                    User: userInfoTable.First(u => u.Id == long.Parse(g.Key)),
-                    Posts: g,
-                    Count: tables["schedule"]
-                        .OrderByDescending(s => DateTime.Parse(s["date"]))
-                        .TakeWhile(s => g.Any(pst => pst["id_schedule"] == s["id"]))
-                        .Count()))
-                .OrderBy(info => info.Count)
-                .ToArray();
-            schedule["ranking_post"] = string.Join(",", postRanking.Select(p => p.Id));
-            schedule["ranking_entry"] = string.Join(",", entryRanking.Select(p => p.Id));
-            schedule["ranking_continue"] = string.Join(",", continueRanking.Select(p => p.Id));
+            Console.WriteLine($"Total post: {tables["post"].Count()} Total Users: {tables["post"].Select(p => long.Parse(p["id_user"])).Distinct().Count()}");
+
+            RegeneratSummaryPage(tables, me);
+        }
+
+        public void RegeneratSummaryPage()
+        {
+            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
+            var me = tokens.Account.VerifyCredentials();
+            RegeneratSummaryPage(tables, me);
+        }
+
+        void RegeneratSummaryPage(DB tables, User me)
+        {
+            // Aggregate
+            var (recently, postRanking, entryRanking, continueRanking) = Aggregate(tables);
 
             // Output
             File.WriteAllText(HELP_FILE, Views.Dashboard(me, recently, postRanking, entryRanking, continueRanking), Encoding.UTF8);
@@ -216,6 +185,49 @@ namespace MakiOneDrawingBot
                 theme = "jekyll-theme-slate",
                 title = Views.HASH_TAG,
             }));
+        }
+
+        (Recentry[] recently, Post[] postRanking, Post[] entryRanking, Post[] continueRanking) Aggregate(DB tables)
+        {
+            var posts = tables["post"];
+            var userInfoTable = posts
+                .Select(p => long.Parse(p["id_user"]))
+                .Distinct()
+                .Select((id, i) => (id, i))
+                // .SelectMany(ids => tokens.Users.Lookup(ids))
+                .GroupBy(t => t.i / 95, t => t.id).SelectMany(ids => tokens.Users.Lookup(ids)) // avoid limit
+                .ToArray();
+            var recently = posts
+                .OrderBy(pst => DateTime.Parse(tables["schedule"][pst["id_schedule"]]["date"]))
+                .ThenBy(pst => DateTime.Parse(pst["ts_utc_post"]))
+                .Select(p => new Recentry(userInfoTable.First(u => u.Id == long.Parse(p["id_user"])), p))
+                .ToArray();
+            var postRanking = posts
+                .GroupBy(pst => pst["id_user"])
+                .Select(g => new Post(g.Key, userInfoTable.First(u => u.Id == long.Parse(g.Key)), g, g.Count()))
+                .OrderByDescending(info => info.Count)
+                .ThenBy(post => post.User.ScreenName == "yukawallstudio")
+                .ToArray();
+            var entryRanking = posts
+                .GroupBy(pst => pst["id_user"])
+                .Select(g => new Post(g.Key, userInfoTable.First(u => u.Id == long.Parse(g.Key)), g, g.Select(p => p["id_schedule"]).Distinct().Count()))
+                .OrderByDescending(info => info.Count)
+                .ThenBy(post => post.User.ScreenName == "yukawallstudio")
+                .ToArray();
+            var continueRanking = posts
+                .GroupBy(pst => pst["id_user"])
+                .Select(g => new Post(
+                    Id: g.Key,
+                    User: userInfoTable.First(u => u.Id == long.Parse(g.Key)),
+                    Posts: g,
+                    Count: tables["schedule"]
+                .OrderByDescending(s => DateTime.Parse(s["date"]))
+                .TakeWhile(s => g.Any(pst => pst["id_schedule"] == s["id"]))
+                .Count()))
+                .OrderByDescending(info => info.Count)
+                .ThenBy(post => post.User.ScreenName == "yukawallstudio")
+                .ToArray();
+            return (recently, postRanking, entryRanking, continueRanking);
         }
 
         Entry CreateOrGetSchedule(DB tables)

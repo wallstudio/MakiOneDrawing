@@ -12,9 +12,8 @@ namespace MakiOneDrawingBot
     class Actions
     {
         static readonly string DB_SHEET_ID = "1Un15MnW9Z2ChwSdsxdAVw495uSmJN4jBHngcBpYxo_0";
-        static readonly string HELP_FILE = "docs/index.md";
-        static readonly string HELP_CONFIG_FILE = "docs/_config.yml";
-        static readonly string HELP_HISTORY_FILE = "docs/history.yml";
+        static readonly string DOCS_DIR = "docs";
+        static readonly string HELP_CONFIG_FILE = $"{DOCS_DIR}/_config.yml";
         static readonly Serializer SERIALIZER = new();
         readonly string googleServiceAccountJwt;
         readonly DateTime eventDate;
@@ -179,7 +178,11 @@ namespace MakiOneDrawingBot
             var (recently, postRanking, entryRanking, continueRanking) = Aggregate(tables);
 
             // Output
-            File.WriteAllText(HELP_FILE, Views.Dashboard(me, recently, postRanking, entryRanking, continueRanking), Encoding.UTF8);
+            File.WriteAllText($"{DOCS_DIR}/{Views.HELP_URL_INDEX}.md", Views.Dashboard(recently, postRanking, entryRanking, continueRanking), Encoding.UTF8);
+            File.WriteAllText($"{DOCS_DIR}/{Views.HELP_URL_RECENTRY}.md", Views.RecentryPage(recently), Encoding.UTF8);
+            File.WriteAllText($"{DOCS_DIR}/{Views.HELP_URL_POST_RANK}.md", Views.PostRankingPage(postRanking), Encoding.UTF8);
+            File.WriteAllText($"{DOCS_DIR}/{Views.HELP_URL_ENTRY_RANK}.md", Views.EntryRankingPage(entryRanking), Encoding.UTF8);
+            File.WriteAllText($"{DOCS_DIR}/{Views.HELP_URL_CONTINUE_RANK}.md", Views.ContinueRankingPage(continueRanking), Encoding.UTF8);
             File.WriteAllText(HELP_CONFIG_FILE, SERIALIZER.Serialize(new
             {
                 theme = "jekyll-theme-slate",

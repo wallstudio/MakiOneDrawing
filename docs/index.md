@@ -6,8 +6,8 @@
 
 | 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ |
 | :---: | :---: | :---: | :---: | :---: |
-| [![](:thumb)](https://twitter.com//status/) | [![](:thumb)](https://twitter.com//status/) | [![](:thumb)](https://twitter.com//status/) | [![](:thumb)](https://twitter.com//status/) | [![](:thumb)](https://twitter.com//status/) |
-| [@](https://twitter.com/) | [@](https://twitter.com/) | [@](https://twitter.com/) | [@](https://twitter.com/) | [@](https://twitter.com/) |
+| [![](https://pbs.twimg.com/media/E_k-jLCVIAM5BhL.jpg:thumb)](https://twitter.com/yukawallstudio/status/1439251069222096902) | [![](https://pbs.twimg.com/media/E_k6PasVkAUrmqa.png:thumb)](https://twitter.com/uwag0/status/1439245673744896005) | [![](https://pbs.twimg.com/media/E_kvfC3UUA0i0yH.jpg:thumb)](https://twitter.com/yukawallstudio/status/1439233837360291843) | [![](:thumb)](https://twitter.com//status/) | [![](:thumb)](https://twitter.com//status/) |
+| [@yukawallstudio](https://twitter.com/yukawallstudio) | [@uwag0](https://twitter.com/uwag0) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@](https://twitter.com/) | [@](https://twitter.com/) |
 
 ## ランキング
 
@@ -17,9 +17,9 @@
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| [![@]()](https://twitter.com/) | [![@]()](https://twitter.com/) | [![@]()](https://twitter.com/) |
-| [@](https://twitter.com/) | [@](https://twitter.com/) | [@](https://twitter.com/) |
-|  作品 |  作品 |  作品 |
+| [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_normal.jpeg)](https://twitter.com/uwag0) | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@]()](https://twitter.com/) |
+| [@uwag0](https://twitter.com/uwag0) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@](https://twitter.com/) |
+| 1 作品 | 2 作品 |  作品 |
 
 ### 🏆Best 参加回数🏆
 
@@ -27,9 +27,9 @@
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| [![@]()](https://twitter.com/) | [![@]()](https://twitter.com/) | [![@]()](https://twitter.com/) |
-| [@](https://twitter.com/) | [@](https://twitter.com/) | [@](https://twitter.com/) |
-|  回 |  回 |  回 |
+| [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_normal.jpeg)](https://twitter.com/uwag0) | [![@]()](https://twitter.com/) |
+| [@yukawallstudio](https://twitter.com/yukawallstudio) | [@uwag0](https://twitter.com/uwag0) | [@](https://twitter.com/) |
+| 1 回 | 1 回 |  回 |
 
 ### 🏆Best 継続数🏆
 
@@ -37,9 +37,9 @@
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| [![@]()](https://twitter.com/) | [![@]()](https://twitter.com/) | [![@]()](https://twitter.com/) |
-| [@](https://twitter.com/) | [@](https://twitter.com/) | [@](https://twitter.com/) |
-|  回連続 |  回連続 |  回連続 |
+| [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_normal.jpeg)](https://twitter.com/uwag0) | [![@]()](https://twitter.com/) |
+| [@yukawallstudio](https://twitter.com/yukawallstudio) | [@uwag0](https://twitter.com/uwag0) | [@](https://twitter.com/) |
+| 1 回連続 | 1 回連続 |  回連続 |
 
 ## 基本ルール
 

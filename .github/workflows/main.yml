@@ -46,7 +46,6 @@ jobs:
         --access-token "${{ secrets.ACCESS_TOKEN }}"
         --access-token-secret "${{ secrets.ACCESS_TOKEN_SECRET }}"
         --google-service-account-jwt "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JWT }}"
-        
         --command "${{ github.event.inputs.command }}"
         --actionDate "${{ github.event.inputs.actionDate }}"
         --eventDate "${{ github.event.inputs.eventDate }}"

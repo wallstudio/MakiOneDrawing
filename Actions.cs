@@ -201,7 +201,7 @@ namespace MakiOneDrawingBot
                 .GroupBy(t => t.i / 95, t => t.id).SelectMany(ids => tokens.Users.Lookup(ids)) // avoid limit
                 .ToArray();
             var recently = posts
-                .OrderBy(pst => DateTime.Parse(tables["schedule"][pst["id_schedule"]]["date"]))
+                .OrderByDescending(pst => DateTime.Parse(tables["schedule"][pst["id_schedule"]]["date"]))
                 .ThenBy(pst => DateTime.Parse(pst["ts_utc_post"]))
                 .Select(p => new Recentry(userInfoTable.First(u => u.Id == long.Parse(p["id_user"])), p))
                 .ToArray();

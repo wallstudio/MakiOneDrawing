@@ -127,12 +127,6 @@ namespace MakiOneDrawingBot
 
         public static string Dashboard(Recentry[] recently, Post[] postRanking, Post[] entryRanking, Post[] continueRanking)
         {
-            var medias = Enumerable.Range(0, 5)
-                .Select(i => LinkedMedia(
-                    screenName: recently.ElementAtOrDefault(i)?.User?.ScreenName,
-                    statusId: recently.ElementAtOrDefault(i)?.Post?["id_status"],
-                    mediaUrl: recently.ElementAtOrDefault(i)?.Post?["url_media"]));
-
             var text = @$"
 [📝基本ルール](#基本ルール)
 
@@ -142,8 +136,8 @@ namespace MakiOneDrawingBot
 
 | 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ | 6️⃣ | 7️⃣ | 8️⃣ | 9️⃣ | 🔟 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| {string.Join(" | ", medias)} |
-| {string.Join(" | ", Enumerable.Range(0, 10).Select(i => LinkedName(recently.ElementAtOrDefault(i)?.User)))} |
+| {string.Join(" | ", recently.Take(10).Select(post => LinkedMedia(post?.User?.ScreenName, post?.Post?["id_status"], post?.Post?["url_media"])))} |
+| {string.Join(" | ", recently.Take(10).Select(post => LinkedName(post?.User)))} |
 
 
 [全てみる]({HELP_URL_RECENTRY})
@@ -155,9 +149,9 @@ namespace MakiOneDrawingBot
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => LinkedImage(postRanking.ElementAtOrDefault(i)?.User)))} |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => LinkedName(postRanking.ElementAtOrDefault(i)?.User)))} |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => $"{postRanking.ElementAtOrDefault(i)?.Count} 作品"))} |
+| {string.Join(" | ", postRanking.Take(3).Select(post => LinkedImage(post?.User)))} |
+| {string.Join(" | ", postRanking.Take(3).Select(post => LinkedName(post?.User)))} |
+| {string.Join(" | ", postRanking.Take(3).Select(post => $"{post?.Count} 作品"))} |
 
 [全てみる]({HELP_URL_POST_RANK})
 
@@ -167,9 +161,9 @@ namespace MakiOneDrawingBot
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => LinkedImage(entryRanking.ElementAtOrDefault(i)?.User)))} |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => LinkedName(entryRanking.ElementAtOrDefault(i)?.User)))} |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => $"{entryRanking.ElementAtOrDefault(i)?.Count} 回"))} |
+| {string.Join(" | ", entryRanking.Take(3).Select(post => LinkedImage(post?.User)))} |
+| {string.Join(" | ", entryRanking.Take(3).Select(post => LinkedName(post?.User)))} |
+| {string.Join(" | ", entryRanking.Take(3).Select(post => $"{post?.Count} 回"))} |
 
 [全てみる]({HELP_URL_ENTRY_RANK})
 
@@ -179,9 +173,9 @@ namespace MakiOneDrawingBot
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => LinkedImage(continueRanking.ElementAtOrDefault(i)?.User)))} |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => LinkedName(continueRanking.ElementAtOrDefault(i)?.User)))} |
-| {string.Join(" | ", Enumerable.Range(0, 3).Select(i => $"{continueRanking.ElementAtOrDefault(i)?.Count} 回連続"))} |
+| {string.Join(" | ", continueRanking.Take(3).Select(post => LinkedImage(post?.User)))} |
+| {string.Join(" | ", continueRanking.Take(3).Select(post => LinkedName(post?.User)))} |
+| {string.Join(" | ", continueRanking.Take(3).Select(post => $"{post?.Count} 回連続"))} |
 
 [全てみる]({HELP_URL_CONTINUE_RANK})
 

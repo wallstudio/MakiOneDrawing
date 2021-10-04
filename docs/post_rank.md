@@ -6,9 +6,11 @@
 
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
-| 1 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 3 作品 |
+| 1 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 4 作品 |
 | 2 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 2 作品 |
 | 3 | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) | 1 作品 |
+| 4 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1443951967995195396/gXSXUaKY_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 1 作品 |
+| 5 | [![@crn_ss](https://pbs.twimg.com/profile_images/1442266897139965952/ujmyQGsA_bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 1 作品 |
 
 # 基本情報
 

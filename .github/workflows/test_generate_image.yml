@@ -1,0 +1,41 @@
+name: Test Generate Image
+
+on:
+  workflow_dispatch :
+    inputs:
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+        
+    - name: ChangeTimeZone
+      run: sudo timedatectl set-timezone Asia/Tokyo
+
+    - name: Run
+      run: > 
+        dotnet run --
+        --twitter-api-key "${{ secrets.TWITTER_API_KEY }}"
+        --twitter-api-secret "${{ secrets.TWITTER_API_SECRET }}"
+        --bearer-token "${{ secrets.BEARER_TOKEN }}"
+        --access-token "${{ secrets.ACCESS_TOKEN }}"
+        --access-token-secret "${{ secrets.ACCESS_TOKEN_SECRET }}"
+        --google-service-account-jwt "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JWT }}"
+        --command "TestGenerateTextImage"
+        --actionDate "null"
+        --eventDate "2100/1/1"
+        --nextDate "null"
+        --general "test generate image"
+
+    - name: Archive
+      uses: actions/upload-artifact@v2
+      with:
+        name: test_generate_image
+        path: ./TestGenerateTextImage

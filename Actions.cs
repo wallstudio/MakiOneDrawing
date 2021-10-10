@@ -34,6 +34,16 @@ namespace MakiOneDrawingBot
             this.general = general;
         }
 
+        public IEnumerable<(string text, byte[] bin)> TestGenerateTextImage()
+        {
+            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
+            foreach (var theme in tables["theme"].Where(thm => !string.IsNullOrEmpty(thm["id"])))
+            {
+                var text = $"{theme["theme1"]}\n\n{theme["theme2"]}";
+                yield return (text, Views.GenerateTextImage(text));
+            }
+        }
+
         /// <summary> 朝の予告ツイートを投げる </summary>
         public void NotificationMorning()
         {

@@ -60,8 +60,12 @@ namespace MakiOneDrawingBot
                     var newCommand = Console.ReadLine();
                     Main(args.Select(a => a == command ? newCommand : a).ToArray());
                     break;
-                case nameof(Views.GenerateTextImage):
-                    File.WriteAllBytes("o.png", Views.GenerateTextImage("オープニング\n\nお月見🎑"));
+                case nameof(Actions.TestGenerateTextImage):
+                    foreach (var (text, bin) in actions.TestGenerateTextImage())
+                    {
+                        Directory.CreateDirectory(nameof(Actions.TestGenerateTextImage));
+                        File.WriteAllBytes($"{nameof(Actions.TestGenerateTextImage)}/{text.Replace("\n", " ")}.png", bin);
+                    }
                     break;
                 default:
                     throw new ArgumentException($"--command={command}");

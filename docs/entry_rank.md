@@ -11,7 +11,7 @@
 | 3 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1448314715403427851/zecdnPDK_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 3 回 |
 | 4 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1438330240833515526/8rItNVUa_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 2 回 |
 | 5 | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) | 1 回 |
-| 6 | [![@crn_ss](https://pbs.twimg.com/profile_images/1442266897139965952/ujmyQGsA_bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 1 回 |
+| 6 | [![@crn_ss](https://pbs.twimg.com/profile_images/1453734918047952910/nZ4gTFst_bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 1 回 |
 | 7 | [![@sayomakivoice](https://pbs.twimg.com/profile_images/1448653317018558469/ptNwxiQR_bigger.jpg)](https://twitter.com/sayomakivoice) | [@sayomakivoice](https://twitter.com/sayomakivoice) | 1 回 |
 
 # 基本情報

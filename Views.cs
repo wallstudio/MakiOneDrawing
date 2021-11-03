@@ -114,12 +114,20 @@ namespace MakiOneDrawingBot
                 option.TextOptions.VerticalAlignment = VerticalAlignment.Center;
                 option.TextOptions.HorizontalAlignment = HorizontalAlignment.Left;
                 option.TextOptions.FallbackFonts.Add(new FontCollection().Install("font/TwemojiMozilla.ttf")); // 幅計算がうまく行ってないっぽい
-                context.DrawText(
-                    options: option,
-                    text: Regex.Replace(text, "(\uFE00|\uFE01|\uFE02|\uFE03|\uFE04|\uFE05|\uFE06|\uFE07|\uFE08|\uFE09|\uFE0A|\uFE0B|\uFE0C|\uFE0D|\uFE0E|\uFE0F)", ""),
-                    font: font.CreateFont(160, FontStyle.Bold),
-                    color: Color.Black,
-                    location: new PointF(image.Width * 0.375f, image.Height * 0.45f));
+                try
+                {
+                    context.DrawText(
+                        options: option,
+                        text: Regex.Replace(text, "(\uFE00|\uFE01|\uFE02|\uFE03|\uFE04|\uFE05|\uFE06|\uFE07|\uFE08|\uFE09|\uFE0A|\uFE0B|\uFE0C|\uFE0D|\uFE0E|\uFE0F)", ""),
+                        font: font.CreateFont(160, FontStyle.Bold),
+                        color: Color.Black,
+                        location: new PointF(image.Width * 0.375f, image.Height * 0.45f));
+                }
+                catch(Exception)
+                {
+                    Console.Error.WriteLine($"fail DrawText \"${text}\"");
+                    throw;
+                }
             });
             using var buffer = new MemoryStream();
             image.SaveAsPng(buffer);

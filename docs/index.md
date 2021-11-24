@@ -6,8 +6,8 @@
 
 | 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ | 6️⃣ | 7️⃣ | 8️⃣ | 9️⃣ | 🔟 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [![](https://pbs.twimg.com/media/FEFUz7jagAAe5R_.jpg:thumb)](https://twitter.com/kaosakijin/status/1459541056337244166) | [![](https://pbs.twimg.com/media/FEFXaz0acAEfFY8.jpg:thumb)](https://twitter.com/crn_ss/status/1459543878256644098) | [![](https://pbs.twimg.com/media/FDRodz9aMAEeEZB.png:thumb)](https://twitter.com/uwag0/status/1455903456443580426) | [![](https://pbs.twimg.com/media/FDR9u7CakAAHchU.jpg:thumb)](https://twitter.com/yukawallstudio/status/1455927229238546436) | [![](https://pbs.twimg.com/media/FCZGEV0VIBAJSMG.png:thumb)](https://twitter.com/shishi10_n/status/1451926374726332422) | [![](https://pbs.twimg.com/media/FCZTOr7XsAMrhnD.jpg:thumb)](https://twitter.com/kaosakijin/status/1451939724139040772) | [![](https://pbs.twimg.com/media/FBlcIo8VkAYK-QS.jpg:thumb)](https://twitter.com/sayomakivoice/status/1448290072948731912) | [![](https://pbs.twimg.com/media/FBlcsJCUcAcfGiv.png:thumb)](https://twitter.com/shishi10_n/status/1448302596595150849) | [![](https://pbs.twimg.com/media/FBlugnOXIAsJyhS.jpg:thumb)](https://twitter.com/kaosakijin/status/1448310635754934277) | [![](https://pbs.twimg.com/media/FBlx4WvUUAYoQcn.png:thumb)](https://twitter.com/uwag0/status/1448314038354518024) |
-| [@kaosakijin](https://twitter.com/kaosakijin) | [@crn_ss](https://twitter.com/crn_ss) | [@uwag0](https://twitter.com/uwag0) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@shishi10_n](https://twitter.com/shishi10_n) | [@kaosakijin](https://twitter.com/kaosakijin) | [@sayomakivoice](https://twitter.com/sayomakivoice) | [@shishi10_n](https://twitter.com/shishi10_n) | [@kaosakijin](https://twitter.com/kaosakijin) | [@uwag0](https://twitter.com/uwag0) |
+| [![](https://pbs.twimg.com/media/FE49ykDXIAI3lmG.jpg:thumb)](https://twitter.com/yukawallstudio/status/1463175410821132288) | [![](https://pbs.twimg.com/media/FEFUz7jagAAe5R_.jpg:thumb)](https://twitter.com/kaosakijin/status/1459541056337244166) | [![](https://pbs.twimg.com/media/FEFXaz0acAEfFY8.jpg:thumb)](https://twitter.com/crn_ss/status/1459543878256644098) | [![](https://pbs.twimg.com/media/FDRodz9aMAEeEZB.png:thumb)](https://twitter.com/uwag0/status/1455903456443580426) | [![](https://pbs.twimg.com/media/FDR9u7CakAAHchU.jpg:thumb)](https://twitter.com/yukawallstudio/status/1455927229238546436) | [![](https://pbs.twimg.com/media/FCZGEV0VIBAJSMG.png:thumb)](https://twitter.com/shishi10_n/status/1451926374726332422) | [![](https://pbs.twimg.com/media/FCZTOr7XsAMrhnD.jpg:thumb)](https://twitter.com/kaosakijin/status/1451939724139040772) | [![](https://pbs.twimg.com/media/FBlcIo8VkAYK-QS.jpg:thumb)](https://twitter.com/sayomakivoice/status/1448290072948731912) | [![](https://pbs.twimg.com/media/FBlcsJCUcAcfGiv.png:thumb)](https://twitter.com/shishi10_n/status/1448302596595150849) | [![](https://pbs.twimg.com/media/FBlugnOXIAsJyhS.jpg:thumb)](https://twitter.com/kaosakijin/status/1448310635754934277) |
+| [@yukawallstudio](https://twitter.com/yukawallstudio) | [@kaosakijin](https://twitter.com/kaosakijin) | [@crn_ss](https://twitter.com/crn_ss) | [@uwag0](https://twitter.com/uwag0) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@shishi10_n](https://twitter.com/shishi10_n) | [@kaosakijin](https://twitter.com/kaosakijin) | [@sayomakivoice](https://twitter.com/sayomakivoice) | [@shishi10_n](https://twitter.com/shishi10_n) | [@kaosakijin](https://twitter.com/kaosakijin) |
 
 
 [全てみる](recentry)
@@ -21,7 +21,7 @@
 | :---: | :---: | :---: |
 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [![@kaosakijin](https://pbs.twimg.com/profile_images/1457485503847362560/56TDlQ_J_bigger.png)](https://twitter.com/kaosakijin) |
 | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@uwag0](https://twitter.com/uwag0) | [@kaosakijin](https://twitter.com/kaosakijin) |
-| 6 作品 | 4 作品 | 4 作品 |
+| 7 作品 | 4 作品 | 4 作品 |
 
 [全てみる](post_rank)
 
@@ -33,7 +33,7 @@
 | :---: | :---: | :---: |
 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [![@kaosakijin](https://pbs.twimg.com/profile_images/1457485503847362560/56TDlQ_J_bigger.png)](https://twitter.com/kaosakijin) |
 | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@uwag0](https://twitter.com/uwag0) | [@kaosakijin](https://twitter.com/kaosakijin) |
-| 5 回 | 4 回 | 4 回 |
+| 6 回 | 4 回 | 4 回 |
 
 [全てみる](entry_rank)
 
@@ -43,9 +43,9 @@
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| [![@kaosakijin](https://pbs.twimg.com/profile_images/1457485503847362560/56TDlQ_J_bigger.png)](https://twitter.com/kaosakijin) | [![@crn_ss](https://pbs.twimg.com/profile_images/1453734918047952910/nZ4gTFst_bigger.jpg)](https://twitter.com/crn_ss) | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) |
-| [@kaosakijin](https://twitter.com/kaosakijin) | [@crn_ss](https://twitter.com/crn_ss) | [@uwag0](https://twitter.com/uwag0) |
-| 1 回連続 | 1 回連続 | 0 回連続 |
+| [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) |
+| [@yukawallstudio](https://twitter.com/yukawallstudio) | [@uwag0](https://twitter.com/uwag0) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) |
+| 1 回連続 | 0 回連続 | 0 回連続 |
 
 [全てみる](continue_rank)
 

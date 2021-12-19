@@ -34,7 +34,7 @@ namespace MakiOneDrawingBot
             this.general = general;
         }
 
-        public IEnumerable<(string text, byte[] bin)> TestGenerateTextImage()
+        public IEnumerable<(string text, byte[] bin)> TestGenerateTextImages()
         {
             using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
             foreach (var theme in tables["theme"].Where(thm => !string.IsNullOrEmpty(thm["id"])))

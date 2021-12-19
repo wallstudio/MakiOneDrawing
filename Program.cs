@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using SixLabors.ImageSharp;
 using System.Globalization;
@@ -60,13 +60,21 @@ namespace MakiOneDrawingBot
                     var newCommand = Console.ReadLine();
                     Main(args.Select(a => a == command ? newCommand : a).ToArray());
                     break;
-                case nameof(Actions.TestGenerateTextImage):
-                    foreach (var (text, bin) in actions.TestGenerateTextImage())
+                case nameof(Actions.TestGenerateTextImages):
+                    foreach (var (text, bin) in actions.TestGenerateTextImages())
                     {
-                        Directory.CreateDirectory(nameof(Actions.TestGenerateTextImage));
-                        File.WriteAllBytes($"{nameof(Actions.TestGenerateTextImage)}/{text.Replace("\n", " ")}.png", bin);
+                        Directory.CreateDirectory(nameof(Actions.TestGenerateTextImages));
+                        File.WriteAllBytes($"{nameof(Actions.TestGenerateTextImages)}/{text.Replace("\n", " ")}.png", bin);
                     }
                     break;
+                case nameof(Views.GenerateTextImage):
+                    {
+                        var text = Console.ReadLine().Replace("\\n", "\n");
+                        var bin = Views.GenerateTextImage(text);
+                        Directory.CreateDirectory(nameof(Actions.TestGenerateTextImages));
+                        File.WriteAllBytes($"{text.Replace("\n", " ")}.png", bin);
+                        break;
+                    }
                 default:
                     throw new ArgumentException($"--command={command}");
             }

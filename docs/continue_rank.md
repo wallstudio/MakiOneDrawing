@@ -6,14 +6,14 @@
 
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
-| 1 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 3 回連続 |
-| 2 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1466714146171666438/RFFUu37M_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 1 回連続 |
-| 3 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 0 回連続 |
-| 4 | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) | 0 回連続 |
-| 5 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1463892213780598784/6KT66gtu_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 0 回連続 |
-| 6 | [![@crn_ss](https://pbs.twimg.com/profile_images/1459889324250767361/KMBR_Qo__bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 0 回連続 |
-| 7 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1438330240833515526/8rItNVUa_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 0 回連続 |
-| 8 | [![@sayomakivoice](https://pbs.twimg.com/profile_images/1448653317018558469/ptNwxiQR_bigger.jpg)](https://twitter.com/sayomakivoice) | [@sayomakivoice](https://twitter.com/sayomakivoice) | 0 回連続 |
+| 1 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1473321920934608898/9BQFeaO3_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 1 回連続 |
+| 2 | [![@crn_ss](https://pbs.twimg.com/profile_images/1459889324250767361/KMBR_Qo__bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 1 回連続 |
+| 3 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 1 回連続 |
+| 4 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 0 回連続 |
+| 5 | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) | 0 回連続 |
+| 6 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1474060105155252224/GlmeNqQo_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 0 回連続 |
+| 7 | [![@sayomakivoice](https://pbs.twimg.com/profile_images/1448653317018558469/ptNwxiQR_bigger.jpg)](https://twitter.com/sayomakivoice) | [@sayomakivoice](https://twitter.com/sayomakivoice) | 0 回連続 |
+| 8 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1466714146171666438/RFFUu37M_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 0 回連続 |
 
 # 基本情報
 

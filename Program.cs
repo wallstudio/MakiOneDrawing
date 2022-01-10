@@ -22,7 +22,6 @@ namespace MakiOneDrawingBot
                 accessTokenSecret: args.GetOption("access-token-secret"),
                 googleServiceAccountJwt: args.GetOption("google-service-account-jwt"),
                 date: args.GetOption("eventDate"), // nullable
-                next: args.GetOption("nextDate"), // nullable
                 general: args.GetOption("general")); // nullable
 
             // 指定時間まで待つ（タイマーの誤差を吸収する）
@@ -56,23 +55,33 @@ namespace MakiOneDrawingBot
                     actions.RegeneratSummaryPage();
                     break;
                 case "null":
+                case null:
                     Console.Write("Command: ");
                     var newCommand = Console.ReadLine();
                     Main(args.Select(a => a == command ? newCommand : a).ToArray());
-                    break;
-                case nameof(Actions.TestGenerateTextImages):
-                    foreach (var (text, bin) in actions.TestGenerateTextImages())
-                    {
-                        Directory.CreateDirectory(nameof(Actions.TestGenerateTextImages));
-                        File.WriteAllBytes($"{nameof(Actions.TestGenerateTextImages)}/{text.Replace("\n", " ")}.png", bin);
-                    }
                     break;
                 case nameof(Views.GenerateTextImage):
                     {
                         var text = Console.ReadLine().Replace("\\n", "\n");
                         var bin = Views.GenerateTextImage(text);
-                        Directory.CreateDirectory(nameof(Actions.TestGenerateTextImages));
-                        File.WriteAllBytes($"{text.Replace("\n", " ")}.png", bin);
+                        Directory.CreateDirectory("output");
+                        File.WriteAllBytes($"output/{text.Replace("\n", " ")}.png", bin);
+                        break;
+                    }
+                case "TestSequence":
+                    {
+                        var dir = $"output/{DateTime.Now:yyyy_MM_dd_HH_mm_ss_zz}";
+                        Directory.CreateDirectory($"{dir}/docs");
+                        actions.RegeneratSummaryPage();
+                        foreach (var file in Directory.GetFiles("docs"))
+                        {
+                            File.Copy(file, $"{dir}/docs/{Path.GetFileName(file)}");
+                        }
+                        Directory.CreateDirectory($"{dir}/img");
+                        foreach (var (text, bin) in actions.TestGenerateTextImages())
+                        {
+                            File.WriteAllBytes($"{dir}/img/{text.Replace("\n", " ")}.png", bin);
+                        }
                         break;
                     }
                 default:

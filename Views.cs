@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
 namespace MakiOneDrawingBot
 {
     
-    static class Views
+    public static class Views
     {
         public static readonly string HASH_TAG = "#弦巻マキ深夜の真剣お絵描き60分勝負";
         static string HELP_URL => $"https://wallstudio.github.io/MakiOneDrawing?v={DateTime.Now.Ticks:x}";
@@ -23,7 +23,20 @@ namespace MakiOneDrawingBot
         public static string HELP_URL_POST_RANK => $"post_rank";
         public static string HELP_URL_ENTRY_RANK => $"entry_rank";
         public static string HELP_URL_CONTINUE_RANK => $"continue_rank";
+
+        public class Recentry
+        {
+            public Status Status { get; init; }
+            public Entries.Post Post { get; init; }
+        }
         
+        public class Post
+        {
+            public User User { get; init; }
+            public int Count { get; init; }
+        }
+        
+
         public static string PredictTweet(string theme1, string theme2)
         {
             var text = $@"
@@ -57,7 +70,7 @@ namespace MakiOneDrawingBot
             return text.Trim();
         }
 
-        public static string FinishTweet(DateTime? nextDate)
+        public static string FinishTweet(DateOnly? nextDate)
         {
             var text = $@"
 {HASH_TAG} #ツルマキマキ
@@ -72,7 +85,7 @@ namespace MakiOneDrawingBot
             return text.Trim();
         }
 
-        public static string ResultTweet(Status[] tweets, DateTime? nextDate)
+        public static string ResultTweet(Entries.Post[] tweets, DateOnly? nextDate)
         {
             string text;
             if(tweets.Length > 0)
@@ -145,8 +158,8 @@ namespace MakiOneDrawingBot
 
 | 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ | 6️⃣ | 7️⃣ | 8️⃣ | 9️⃣ | 🔟 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| {string.Join(" | ", recently.Take(10).Select(post => LinkedMedia(post?.User?.ScreenName, post?.Post?["id_status"], post?.Post?["url_media"])))} |
-| {string.Join(" | ", recently.Take(10).Select(post => LinkedName(post?.User)))} |
+| {string.Join(" | ", recently.Take(10).Select(post => LinkedMedia(post?.Status?.User?.ScreenName, post?.Post?.Id, post?.Status?.Entities?.Media?.FirstOrDefault()?.MediaUrlHttps)))} |
+| {string.Join(" | ", recently.Take(10).Select(post => LinkedName(post?.Status?.User)))} |
 
 
 [全てみる]({HELP_URL_RECENTRY})
@@ -207,10 +220,10 @@ namespace MakiOneDrawingBot
 {string.Join("\n", recently.Select((post, i) =>
 {
     var media = LinkedMedia(
-        screenName: post?.User?.ScreenName,
-        statusId: post?.Post?["id_status"],
-        mediaUrl: post?.Post?["url_media"]);
-    return $"| {media} | {post.Post["id_schedule"]} | {LinkedImage(post?.User)} | {LinkedName(post?.User)} |";
+        screenName: post?.Status?.User?.ScreenName,
+        statusId: post?.Status?.Id.ToString(),
+        mediaUrl: post?.Status?.Entities?.Media?.FirstOrDefault()?.MediaUrlHttps);
+    return $"| {media} | {post?.Post?.ScheduleId} | {LinkedImage(post?.Status?.User)} | {LinkedName(post?.Status?.User)} |";
 }))}
 
 {File.ReadAllText("README.md")}
@@ -287,7 +300,4 @@ namespace MakiOneDrawingBot
 
     }
 
-    record Recentry(User User, Entry Post);
-    record Post(string Id, User User, IEnumerable<Entry> Posts, int Count);
-    
 }

@@ -10,3 +10,4 @@ font/*
 !font/TwemojiMozilla.ttf
 
 /TestGenerateTextImage/*
+/output/*

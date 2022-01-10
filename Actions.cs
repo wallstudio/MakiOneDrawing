@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Text;
 using YamlDotNet.Serialization;
+using MakiOneDrawingBot.Entries;
 
 namespace MakiOneDrawingBot
 {
@@ -16,30 +17,26 @@ namespace MakiOneDrawingBot
         static readonly string HELP_CONFIG_FILE = $"{DOCS_DIR}/_config.yml";
         static readonly Serializer SERIALIZER = new();
         readonly string googleServiceAccountJwt;
-        readonly DateTime eventDate;
-        readonly DateTime? nextDate;
+        readonly DateOnly eventDate;
         readonly string general;
         readonly Tokens tokens;
 
-        string ScheduleId => eventDate.ToString("yyyy_MM_dd");
-        string TimeStamp => (DateTime.UtcNow + TimeSpan.FromHours(+9)).ToString();
-        string TimeStampUtc => DateTime.UtcNow.ToString();
+        string ScheduleId => eventDate.ToString("yyyy/MM/dd");
 
-        public Actions(string twitterApiKey, string twitterApiSecret, string bearerToken, string accessToken, string accessTokenSecret, string googleServiceAccountJwt, string date, string next, string general)
+        public Actions(string twitterApiKey, string twitterApiSecret, string bearerToken, string accessToken, string accessTokenSecret, string googleServiceAccountJwt, string date, string general)
         {
             this.googleServiceAccountJwt = Encoding.UTF8.GetString(Convert.FromBase64String(googleServiceAccountJwt));
             tokens = Tokens.Create(twitterApiKey, twitterApiSecret, accessToken, accessTokenSecret);
-            eventDate = DateTime.Parse(date);
-            nextDate = DateTime.TryParse(next, out var d) ? d : null;
+            eventDate = DateOnly.Parse(date);
             this.general = general;
         }
 
         public IEnumerable<(string text, byte[] bin)> TestGenerateTextImages()
         {
-            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
-            foreach (var theme in tables["theme"].Where(thm => !string.IsNullOrEmpty(thm["id"])))
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            foreach (var schedule in db.GetTable<Schedule>())
             {
-                var text = $"{theme["theme1"]}\n\n{theme["theme2"]}";
+                var text = $"{schedule.Theme1}\n\n{schedule.Theme2}";
                 yield return (text, Views.GenerateTextImage(text));
             }
         }
@@ -47,80 +44,67 @@ namespace MakiOneDrawingBot
         /// <summary> 朝の予告ツイートを投げる </summary>
         public void NotificationMorning()
         {
-            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
-            var schedule = CreateOrGetSchedule(tables);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            var schedule = db.GetTable<Schedule>()[ScheduleId];
+            if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
-            // Post tweet
-            var themeId = schedule["id_theme"];
-            var theme1 = tables["theme"][themeId]["theme1"];
-            var theme2 = tables["theme"][themeId]["theme2"];
-            var uploadResult = tokens.Media.Upload(Views.GenerateTextImage($"{theme1}\n\n{theme2}"));
+            var uploadResult = tokens.Media.Upload(Views.GenerateTextImage($"{schedule.Theme1}\n\n{schedule.Theme2}"));
             var morning = tokens.Statuses.Update(
-                status: Views.PredictTweet(theme1, theme2),
+                status: Views.PredictTweet(schedule.Theme1, schedule.Theme2),
                 media_ids: new[] { uploadResult.MediaId },
                 auto_populate_reply_metadata: true);
 
-            // Record
-            schedule["id_morning_status"] = morning.Id.ToString();
-            schedule["ts_morning_status"] = TimeStamp;
-            schedule["ts_utc_morning_status"] = TimeStampUtc;
+            schedule.PreId = morning.Id;
         }
 
         /// <summary> ワンドロ開始のツイートを投げる </summary>
         public void NotificationStart()
         {
-            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
-            var schedule = CreateOrGetSchedule(tables);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            var schedule = db.GetTable<Schedule>()[ScheduleId];
+            if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
-            // Post tweet
-            var themeId = schedule["id_theme"];
-            var theme1 = tables["theme"][themeId]["theme1"];
-            var theme2 = tables["theme"][themeId]["theme2"];
-            var uploadResult = tokens.Media.Upload(Views.GenerateTextImage($"{theme1}\n\n{theme2}"));
+            var uploadResult = tokens.Media.Upload(Views.GenerateTextImage($"{schedule.Theme1}\n\n{schedule.Theme2}"));
             var start = tokens.Statuses.Update(
-                status: Views.StartTweet(theme1, theme2),
+                status: Views.StartTweet(schedule.Theme1, schedule.Theme2),
                 media_ids: new[] { uploadResult.MediaId },
-                in_reply_to_status_id: long.TryParse(schedule["id_morning_status"], out var i) ? i : null,
+                in_reply_to_status_id: schedule.PreId,
                 auto_populate_reply_metadata: true);
 
-            // Record
-            schedule["id_start_status"] = start.Id.ToString();
-            schedule["ts_start_status"] = TimeStamp;
-            schedule["ts_utc_start_status"] = TimeStampUtc;
+            schedule.BeginId = start.Id;
         }
 
         /// <summary> ワンドロ終了のツイートを投げる </summary>
         public void NotificationFinish()
         {
-            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
-            var schedule = CreateOrGetSchedule(tables);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            var schedule = db.GetTable<Schedule>()[ScheduleId];
+            if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
-            // Post tweet
+            var next = DateOnly.Parse(db.GetTable<Schedule>().SkipWhile(s => s.Id != ScheduleId).Skip(1).First().Id);
             var finish = tokens.Statuses.Update(
-                status: Views.FinishTweet(nextDate),
-                in_reply_to_status_id: long.TryParse(schedule["id_start_status"], out var i) ? i : null,
+                status: Views.FinishTweet(next),
+                in_reply_to_status_id: schedule.BeginId,
                 // attachment_url: null, // 引用
                 auto_populate_reply_metadata: true);
 
-            // Record
-            schedule["id_finish_status"] = finish.Id.ToString();
-            schedule["ts_finish_status"] = TimeStamp;
-            schedule["ts_utc_finish_status"] = TimeStampUtc;
+            schedule.EndId = finish.Id;
         }
 
         /// <summary> 投稿を集計してRTとランキングを更新する </summary>
         public void AccumulationPosts()
         {
-            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
-            var schedule = CreateOrGetSchedule(tables);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            var schedule = db.GetTable<Schedule>()[ScheduleId];
+            if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
             // Collection
             var me = tokens.Account.VerifyCredentials();
-            var since = DateTime.Parse(schedule["ts_start_status"]) - TimeSpan.FromHours(3);
-            var until = DateTime.Parse(schedule["ts_finish_status"]) + TimeSpan.FromHours(3); // 遅刻OK
-            var format = @"yyy-MM-dd_HH\:mm\:ss_JST";
-            var query = schedule["query"] = $"{Views.HASH_TAG} -from:{me.ScreenName} exclude:retweets since:{since.ToString(format)} until:{until.ToString(format)}"; // https://gist.github.com/cucmberium/e687e88565b6a9ca7039
-            var tweets = EnumerateSearchTweets(
+            var since = tokens.Statuses.Lookup(new []{ schedule.BeginId })[0].CreatedAt - TimeSpan.FromHours(3);
+            var until = tokens.Statuses.Lookup(new []{ schedule.EndId })[0].CreatedAt + TimeSpan.FromHours(3); // 遅刻OK
+            var format = @"yyy-MM-dd_HH\:mm\:ss_UTC";
+            var query = $"{Views.HASH_TAG} -from:{me.ScreenName} exclude:retweets since:{since.ToString(format)} until:{until.ToString(format)}"; // https://gist.github.com/cucmberium/e687e88565b6a9ca7039
+            var foundTweets = EnumerateSearchTweets(
                 q: query,
                 result_type: "recent",
                 until: DateTime.UtcNow.ToString("yyy-MM-dd"),
@@ -129,55 +113,59 @@ namespace MakiOneDrawingBot
                 tweet_mode: TweetMode.Extended)
                 // .Where(twt => since <= twt.CreatedAt && twt.CreatedAt <= until)
                 .ToArray();
+            Console.WriteLine($"Queried `{query}`");
+                
+            // Reflect DB
+            var posts = db.GetTable<Post>();
+            foreach (var tweet in foundTweets)
+            {
+                if(posts.Any(p => p.Id == tweet.Id.ToString())) continue;
+
+                posts[tweet.Id.ToString()] = new Post()
+                {
+                    Id = tweet.Id.ToString(),
+                    ScheduleId = schedule.Id,
+                    UserName = tweet.User.Name.ToString(),
+                };
+            }
+            RegeneratSummaryPage(db, me);
+            Console.WriteLine($"Total post: {posts.Count()}");
 
             // Post tweet
+            var newTweets = posts.Where(p => p.ScheduleId == schedule.Id).ToArray();
+            var next = DateOnly.Parse(db.GetTable<Schedule>().SkipWhile(s => s.Id != ScheduleId).Skip(1).First().Id);
             var preRetweet = tokens.Statuses.Update(
-                status: Views.ResultTweet(tweets, nextDate),
-                in_reply_to_status_id: long.TryParse(schedule["id_finish_status"], out var i) ? i : null,
+                status: Views.ResultTweet(newTweets, next),
+                in_reply_to_status_id: schedule.EndId,
                 // attachment_url: null, // 引用
                 auto_populate_reply_metadata: true);
-
-            // Record
-            schedule["id_accumulation_status"] = preRetweet.Id.ToString();
-            schedule["ts_accumulation_status"] = TimeStamp;
-            schedule["ts_utc_accumulation_status"] = TimeStampUtc;
+            schedule.AccId = preRetweet.Id;
 
             // Reflect Twitter
-            foreach (var tweet in tweets)
+            foreach (var tweet in newTweets)
             {
                 tokens.Favorites.Create(tweet.Id);
                 tokens.Statuses.Retweet(tweet.Id);
-                Console.WriteLine($"RT+Fav {tweet.Id,20} {tweet.User.ScreenName,-10} {tweet.Text}");
+                Console.WriteLine($"RT+Fav {tweet.Id,20}");
             }
+            
+            var allUsers = posts
+                .Select(p => long.Parse(p.Id))
+                .Chunk(95).SelectMany(ts => tokens.Statuses.Lookup(ts)) // avoid limit
+                .Select(s => (long)s.User.Id)
+                .Distinct();
             var followered = tokens.Friends.EnumerateIds(EnumerateMode.Next, user_id: (long)me.Id, count: 5000).ToArray();
-            var noFollowered = tweets.Select(s => s.User).Distinct(UserComparer.Default).Where(u => !followered.Contains(u.Id ?? 0)).ToArray();
-            foreach (var user in noFollowered)
+            var newUsers = allUsers.Except(followered);
+            foreach (var user in newUsers)
             {
-                tokens.Friendships.Create(user_id: user.Id.Value, follow: true);
-                Console.WriteLine($"Follow {user.ScreenName}");
+                tokens.Friendships.Create(user_id: user, follow: true);
+                Console.WriteLine($"Follow {user}");
             }
-
-            // Reflect DB
-            foreach (var tweet in tweets)
-            {
-                var post = tables["post"].Add(tweet.Id.ToString());
-                post["id_status"] = tweet.Id.ToString();
-                post["id_schedule"] = schedule["id"];
-                post["id_user"] = tweet.User.Id.ToString();
-                post["ts_utc_post"] = tweet.CreatedAt.ToString();
-                post["user_display_name"] = tweet.User.Name;
-                post["user_screen_name"] = tweet.User.ScreenName;
-                post["url_user_icon"] = tweet.User.ProfileImageUrlHttps;
-                post["url_media"] = tweet.Entities?.Media?.FirstOrDefault()?.MediaUrlHttps;
-            }
-            Console.WriteLine($"Total post: {tables["post"].Count()} Total Users: {tables["post"].Select(p => long.Parse(p["id_user"])).Distinct().Count()}");
-
-            RegeneratSummaryPage(tables, me);
         }
 
         public void RegeneratSummaryPage()
         {
-            using var tables = DB.Get(googleServiceAccountJwt, DB_SHEET_ID);
+            using var tables = new DB(googleServiceAccountJwt, DB_SHEET_ID);
             var me = tokens.Account.VerifyCredentials();
             RegeneratSummaryPage(tables, me);
         }
@@ -200,67 +188,62 @@ namespace MakiOneDrawingBot
             }));
         }
 
-        (Recentry[] recently, Post[] postRanking, Post[] entryRanking, Post[] continueRanking) Aggregate(DB tables)
+        (Views.Recentry[] recently, Views.Post[] postRanking, Views.Post[] entryRanking, Views.Post[] continueRanking) Aggregate(DB tables)
         {
-            var posts = tables["post"];
-            var userInfoTable = posts
-                .Select(p => long.Parse(p["id_user"]))
-                .Distinct()
-                .Select((id, i) => (id, i))
-                // .SelectMany(ids => tokens.Users.Lookup(ids))
-                .GroupBy(t => t.i / 95, t => t.id).SelectMany(ids => tokens.Users.Lookup(ids)) // avoid limit
+            var posts = tables.GetTable<Post>();
+            var schedule = tables.GetTable<Schedule>();
+            var tweets = posts
+                .Select(p => long.Parse(p.Id))
+                .Chunk(95).SelectMany(ts => tokens.Statuses.Lookup(ts)) // avoid limit
+                .ToDictionary(s => posts.First(p => s.Id.ToString() == p.Id));
+
+            var recently = tweets
+                .OrderByDescending(t => DateOnly.Parse(t.Key.ScheduleId))
+                .ThenBy(t => t.Value.CreatedAt)
+                .Select(t => new Views.Recentry()
+                {
+                    Post = t.Key,
+                    Status = t.Value,
+                })
                 .ToArray();
-            var recently = posts
-                .OrderByDescending(pst => DateTime.Parse(tables["schedule"][pst["id_schedule"]]["date"]))
-                .ThenBy(pst => DateTime.Parse(pst["ts_utc_post"]))
-                .Select(p => new Recentry(userInfoTable.First(u => u.Id == long.Parse(p["id_user"])), p))
-                .ToArray();
-            var postRanking = posts
-                .GroupBy(pst => pst["id_user"])
-                .Select(g => new Post(g.Key, userInfoTable.First(u => u.Id == long.Parse(g.Key)), g, g.Count()))
-                .OrderByDescending(info => info.Count)
+            var postRanking = tweets.Values
+                .GroupBy(t => t.User.Id)
+                .Select(g => new Views.Post()
+                {
+                    User = g.First().User,
+                    Count = g.Count()
+                })
+                .OrderByDescending(post => post.Count)
                 .ThenBy(post => post.User.ScreenName == "yukawallstudio")
+                .ThenBy(post => post.User.Id)
                 .ToArray();
-            var entryRanking = posts
-                .GroupBy(pst => pst["id_user"])
-                .Select(g => new Post(g.Key, userInfoTable.First(u => u.Id == long.Parse(g.Key)), g, g.Select(p => p["id_schedule"]).Distinct().Count()))
-                .OrderByDescending(info => info.Count)
+            var entryRanking = tweets
+                .GroupBy(t => t.Value.User.Id)
+                .Select(g => new Views.Post()
+                {
+                    User = g.First().Value.User,
+                    Count = g.DistinctBy(p => p.Key.ScheduleId).Count(),
+                })
+                .OrderByDescending(post => post.Count)
                 .ThenBy(post => post.User.ScreenName == "yukawallstudio")
+                .ThenBy(post => post.User.Id)
                 .ToArray();
-            var continueRanking = posts
-                .GroupBy(pst => pst["id_user"])
-                .Select(g => new Post(
-                    Id: g.Key,
-                    User: userInfoTable.First(u => u.Id == long.Parse(g.Key)),
-                    Posts: g,
-                    Count: tables["schedule"]
-                .OrderByDescending(s => DateTime.Parse(s["date"]))
-                .TakeWhile(s => g.Any(pst => pst["id_schedule"] == s["id"]))
-                .Count()))
-                .OrderByDescending(info => info.Count)
+            var continueRanking = tweets
+                .GroupBy(t => t.Value.User.Id)
+                .Select(g => new Views.Post()
+                {
+                    User = g.First().Value.User,
+                    Count = schedule
+                        .Where(s => s.AccId is not null)
+                        .Reverse()
+                        .TakeWhile(s => g.Any(t => t.Key.ScheduleId == s.Id))
+                        .Count(),
+                })
+                .OrderByDescending(post => post.Count)
                 .ThenBy(post => post.User.ScreenName == "yukawallstudio")
+                .ThenBy(post => post.User.Id)
                 .ToArray();
             return (recently, postRanking, entryRanking, continueRanking);
-        }
-
-        Entry CreateOrGetSchedule(DB tables)
-        {
-            if(tables["schedule"].TryGet(ScheduleId, out var schedule))
-            {
-                return schedule;
-            }
-
-            schedule = tables["schedule"].Add(ScheduleId);
-            var unusedTheme = tables["theme"]
-                .Where(thm => !tables["schedule"].Any(ev => ev["id_theme"] == thm["id"]));
-            var theme = unusedTheme
-                .Where(thm => !DateTime.TryParse(thm["date"], out var d) || d == eventDate.Date) // 別の日を除外
-                .OrderByDescending(thm => DateTime.TryParse(thm["date"], out var d) && d == eventDate.Date)
-                .First();
-            schedule["id_theme"] = theme["id"];
-            schedule["date"] = eventDate.ToString("yyyy/MM/dd");
-            Console.WriteLine($"created new schedule {ScheduleId}");
-            return schedule;
         }
 
         IEnumerable<Status> EnumerateSearchTweets(string q, string geocode = null, string lang = null, string locale = null, string result_type = null, int? count = null, string until = null, long? since_id = null, long? max_id = null, bool? include_entities = null, bool? include_ext_alt_text = null, TweetMode? tweet_mode = null)

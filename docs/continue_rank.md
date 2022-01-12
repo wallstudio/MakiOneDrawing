@@ -14,7 +14,7 @@
 | 6 | [![@zorow00](https://pbs.twimg.com/profile_images/1474601371039322116/pD46oQhL_bigger.jpg)](https://twitter.com/zorow00) | [@zorow00](https://twitter.com/zorow00) | 0 回連続 |
 | 7 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1478608692870549504/tH6Xvitc_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 0 回連続 |
 | 8 | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) | 0 回連続 |
-| 9 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1478354982911213580/XHeSv-2f_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 0 回連続 |
+| 9 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1481259496639176704/dyvNwEkw_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 0 回連続 |
 
 # 基本情報
 

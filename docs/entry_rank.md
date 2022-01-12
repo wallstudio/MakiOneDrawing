@@ -14,7 +14,7 @@
 | 6 | [![@sayomakivoice](https://pbs.twimg.com/profile_images/1448653317018558469/ptNwxiQR_bigger.jpg)](https://twitter.com/sayomakivoice) | [@sayomakivoice](https://twitter.com/sayomakivoice) | 1 回 |
 | 7 | [![@zorow00](https://pbs.twimg.com/profile_images/1474601371039322116/pD46oQhL_bigger.jpg)](https://twitter.com/zorow00) | [@zorow00](https://twitter.com/zorow00) | 1 回 |
 | 8 | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) | 1 回 |
-| 9 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1478354982911213580/XHeSv-2f_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 1 回 |
+| 9 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1481259496639176704/dyvNwEkw_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 1 回 |
 
 # 基本情報
 

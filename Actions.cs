@@ -34,11 +34,15 @@ namespace MakiOneDrawingBot
         public IEnumerable<(string text, byte[] bin)> TestGenerateTextImages()
         {
             using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
-            foreach (var schedule in db.GetTable<Schedule>())
-            {
-                var text = $"{schedule.Theme1}\n\n{schedule.Theme2}";
-                yield return (text, Views.GenerateTextImage(text));
-            }
+            var images = db.GetTable<Schedule>()
+                .AsParallel()
+                .Select(schedule =>
+                {
+                    var text = $"{schedule.Theme1}\n\n{schedule.Theme2}";
+                    return (text, Views.GenerateTextImage(text));
+                })
+                .ToArray();
+            return images;
         }
 
         /// <summary> 朝の予告ツイートを投げる </summary>

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "ES2021",
         "lib": ["es2019"],
         "experimentalDecorators": true
     },

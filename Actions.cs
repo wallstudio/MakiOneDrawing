@@ -104,8 +104,8 @@ namespace MakiOneDrawingBot
 
             // Collection
             var me = tokens.Account.VerifyCredentials();
-            var since = tokens.Statuses.Lookup(new []{ schedule.BeginId })[0].CreatedAt - TimeSpan.FromHours(3);
-            var until = tokens.Statuses.Lookup(new []{ schedule.EndId })[0].CreatedAt + TimeSpan.FromHours(3); // 遅刻OK
+            var since = tokens.Statuses.Lookup(new[] { (long)schedule.BeginId })[0].CreatedAt - TimeSpan.FromHours(3);
+            var until = tokens.Statuses.Lookup(new[] { (long)schedule.EndId })[0].CreatedAt + TimeSpan.FromHours(3); // 遅刻OK
             var format = @"yyy-MM-dd_HH\:mm\:ss_UTC";
             var query = $"{Views.HASH_TAG} -from:{me.ScreenName} exclude:retweets since:{since.ToString(format)} until:{until.ToString(format)}"; // https://gist.github.com/cucmberium/e687e88565b6a9ca7039
             var foundTweets = EnumerateSearchTweets(
@@ -117,7 +117,7 @@ namespace MakiOneDrawingBot
                 tweet_mode: TweetMode.Extended)
                 // .Where(twt => since <= twt.CreatedAt && twt.CreatedAt <= until)
                 .ToArray();
-            Console.WriteLine($"Queried `{query}`");
+            Console.WriteLine($"Queried {foundTweets.Length} <- `{query}`");
                 
             // Reflect DB
             var posts = db.GetTable<Post>();

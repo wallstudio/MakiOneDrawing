@@ -20,12 +20,14 @@ public class DB : IDisposable
     readonly Dictionary<string, TableBase> m_Tables = new();
     readonly SheetsService m_Service;
     readonly string m_SpreadSheetId;
+    readonly bool m_Writable;
 
-    public DB(string googleServiceAccountJwt, string spreadSheetId)
+    public DB(string googleServiceAccountJwt, string spreadSheetId, bool writable)
     {
         var scopedCredential = GoogleCredential.FromJson(googleServiceAccountJwt).CreateScoped(new[] { SheetsService.Scope.Spreadsheets });
         m_Service = new SheetsService(new SheetsService.Initializer() { HttpClientInitializer = scopedCredential, });
         m_SpreadSheetId = spreadSheetId;
+        m_Writable = writable;
     }
 
     public Table<T> GetTable<T>() where T : EntryBase, new()
@@ -47,6 +49,8 @@ public class DB : IDisposable
 
     public void Store()
     {
+        if(!m_Writable) return;
+
         foreach (var table in m_Tables.Values)
         {
             table.Store(m_Service, m_SpreadSheetId);

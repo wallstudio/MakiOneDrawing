@@ -21,6 +21,7 @@ namespace MakiOneDrawingBot
         readonly string general;
         readonly Tokens tokens;
 
+        bool DryMode => general?.Contains("DRYMODE") ?? false;
         string ScheduleId => eventDate.ToString("yyyy/MM/dd");
 
         public Actions(string twitterApiKey, string twitterApiSecret, string bearerToken, string accessToken, string accessTokenSecret, string googleServiceAccountJwt, string date, string general)
@@ -33,7 +34,7 @@ namespace MakiOneDrawingBot
 
         public IEnumerable<(string text, byte[] bin)> TestGenerateTextImages()
         {
-            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID, writable: false);
             var images = db.GetTable<Schedule>()
                 .AsParallel()
                 .Select(schedule =>
@@ -48,7 +49,7 @@ namespace MakiOneDrawingBot
         /// <summary> 朝の予告ツイートを投げる </summary>
         public void NotificationMorning()
         {
-            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID, writable: !DryMode);
             var schedule = db.GetTable<Schedule>()[ScheduleId];
             if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
@@ -64,7 +65,7 @@ namespace MakiOneDrawingBot
         /// <summary> ワンドロ開始のツイートを投げる </summary>
         public void NotificationStart()
         {
-            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID, writable: !DryMode);
             var schedule = db.GetTable<Schedule>()[ScheduleId];
             if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
@@ -81,7 +82,7 @@ namespace MakiOneDrawingBot
         /// <summary> ワンドロ終了のツイートを投げる </summary>
         public void NotificationFinish()
         {
-            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID, writable: !DryMode);
             var schedule = db.GetTable<Schedule>()[ScheduleId];
             if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
@@ -98,7 +99,7 @@ namespace MakiOneDrawingBot
         /// <summary> 投稿を集計してRTとランキングを更新する </summary>
         public void AccumulationPosts()
         {
-            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            using var db = new DB(googleServiceAccountJwt, DB_SHEET_ID, writable: !DryMode);
             var schedule = db.GetTable<Schedule>()[ScheduleId];
             if(schedule is null) throw new Exception($"Not fond schedule entry. {ScheduleId}");
 
@@ -138,18 +139,23 @@ namespace MakiOneDrawingBot
             // Post tweet
             var newTweets = posts.Where(p => p.ScheduleId == schedule.Id).ToArray();
             var next = DateOnly.Parse(db.GetTable<Schedule>().SkipWhile(s => s.Id != ScheduleId).Skip(1).First().Id);
-            var preRetweet = tokens.Statuses.Update(
-                status: Views.ResultTweet(newTweets, next),
-                in_reply_to_status_id: schedule.EndId,
-                // attachment_url: null, // 引用
-                auto_populate_reply_metadata: true);
-            schedule.AccId = preRetweet.Id;
+            var preRetweet = DryMode
+                ? null
+                : tokens.Statuses.Update(
+                    status: Views.ResultTweet(newTweets, next),
+                    in_reply_to_status_id: schedule.EndId,
+                    // attachment_url: null, // 引用
+                    auto_populate_reply_metadata: true);
+            schedule.AccId = preRetweet?.Id;
 
             // Reflect Twitter
             foreach (var tweet in newTweets)
             {
-                tokens.Favorites.Create(tweet.Id);
-                tokens.Statuses.Retweet(tweet.Id);
+                if(!DryMode)
+                {
+                    tokens.Favorites.Create(long.Parse(tweet.Id));
+                    tokens.Statuses.Retweet(long.Parse(tweet.Id));
+                }
                 Console.WriteLine($"RT+Fav {tweet.Id,20}");
             }
             
@@ -162,14 +168,17 @@ namespace MakiOneDrawingBot
             var newUsers = allUsers.Except(followered);
             foreach (var user in newUsers)
             {
-                tokens.Friendships.Create(user_id: user, follow: true);
+                if(!DryMode)
+                {
+                    tokens.Friendships.Create(user_id: user, follow: true);
+                }
                 Console.WriteLine($"Follow {user}");
             }
         }
 
         public void RegeneratSummaryPage()
         {
-            using var tables = new DB(googleServiceAccountJwt, DB_SHEET_ID);
+            using var tables = new DB(googleServiceAccountJwt, DB_SHEET_ID, writable: false);
             var me = tokens.Account.VerifyCredentials();
             RegeneratSummaryPage(tables, me);
         }

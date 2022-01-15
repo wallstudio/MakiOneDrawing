@@ -158,7 +158,7 @@ namespace MakiOneDrawingBot
 
 | 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ | 6️⃣ | 7️⃣ | 8️⃣ | 9️⃣ | 🔟 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| {string.Join(" | ", recently.Take(10).Select(post => LinkedMedia(post?.Status?.User?.ScreenName, post?.Post?.Id, post?.Status?.Entities?.Media?.FirstOrDefault()?.MediaUrlHttps)))} |
+| {string.Join(" | ", recently.Take(10).Select(post => LinkedMedia(post?.Status)))} |
 | {string.Join(" | ", recently.Take(10).Select(post => LinkedName(post?.Status?.User)))} |
 
 
@@ -219,11 +219,7 @@ namespace MakiOneDrawingBot
 | :--: | :--: | :--: | :--: |
 {string.Join("\n", recently.Select((post, i) =>
 {
-    var media = LinkedMedia(
-        screenName: post?.Status?.User?.ScreenName,
-        statusId: post?.Status?.Id.ToString(),
-        mediaUrl: post?.Status?.Entities?.Media?.FirstOrDefault()?.MediaUrlHttps);
-    return $"| {media} | {post?.Post?.ScheduleId} | {LinkedImage(post?.Status?.User)} | {LinkedName(post?.Status?.User)} |";
+    return $"| {LinkedMedia(post.Status)} | {post?.Post?.ScheduleId} | {LinkedImage(post?.Status?.User)} | {LinkedName(post?.Status?.User)} |";
 }))}
 
 {File.ReadAllText("README.md")}
@@ -294,7 +290,14 @@ namespace MakiOneDrawingBot
             return text.Trim();
         }
 
-        static string LinkedMedia(string screenName, string statusId, string mediaUrl) => $"[![]({mediaUrl}:thumb)](https://twitter.com/{screenName}/status/{statusId})";
+        static string LinkedMedia(Status status)
+        {
+            var screenName = status.User.ScreenName;
+            var statusId = status.Id.ToString();
+            var mediaUrl = status.Entities.Media.Concat(status.ExtendedEntities.Media).FirstOrDefault()?.MediaUrlHttps;
+            return $"[![]({mediaUrl}:thumb)](https://twitter.com/{screenName}/status/{statusId})";
+        }
+
         static string LinkedName(User user) => $"[@{user?.ScreenName}](https://twitter.com/{user?.ScreenName})";
         static string LinkedImage(User user) => $"[![@{user?.ScreenName}]({user?.ProfileImageUrlHttps.Replace("_normal.", "_bigger.")})](https://twitter.com/{user?.ScreenName})";
 

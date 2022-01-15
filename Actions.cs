@@ -207,7 +207,7 @@ namespace MakiOneDrawingBot
             var schedule = tables.GetTable<Schedule>();
             var tweets = posts
                 .Select(p => long.Parse(p.Id))
-                .Chunk(95).SelectMany(ts => tokens.Statuses.Lookup(ts)) // avoid limit
+                .Chunk(95).SelectMany(ts => tokens.Statuses.Lookup(ts, tweet_mode: TweetMode.Extended)) // avoid limit
                 .ToDictionary(s => posts.First(p => s.Id.ToString() == p.Id));
 
             var recently = tweets

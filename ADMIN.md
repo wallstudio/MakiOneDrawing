@@ -1,3 +1,5 @@
+# Design
+
 ```
 GASTrigger
 ↓
@@ -7,6 +9,13 @@ GithubWorkflow
   ⇄ SpreadSheet(DB MakiOneDrawing)
   ⇄ TwitterAPI(@makimaki_draw)
 ```
+
+# Commands
+
+```
+cmd /c "git checkout master && git pull && git merge develop && git push && git checkout develop"
+```
+# Links
 
 - Google
   - [GCPConsole](https://console.cloud.google.com/iam-admin/serviceaccounts/details/116370453942115831918;edit=true?previousPage=%2Fapis%2Fcredentials%3Fauthuser%3D1%26project%3Dmakionedrawingbot&authuser=1&project=makionedrawingbot)

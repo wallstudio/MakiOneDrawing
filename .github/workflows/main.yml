@@ -4,23 +4,19 @@ on:
   workflow_dispatch :
     inputs:
       command:
-        description: 'NotificationMorning|NotificationStart|NotificationFinish|AccumulationPosts'
-        required: false
+        description: 'Command (NotificationMorning|NotificationStart|NotificationFinish|AccumulationPosts)'
+        required: true
         default: ''
       actionDate:
-        description: 'date yyyy/MM/dd HH:mm +09:00'
+        description: 'ActionDate (yyyy/MM/dd HH:mm +09:00)'
         required: false
         default: ''
       eventDate:
-        description: 'date yyyy/MM/dd HH:mm +09:00'
-        required: false
-        default: ''
-      nextDate:
-        description: 'next yyyy/MM/dd HH:mm +09:00'
-        required: false
+        description: 'EventDate (yyyy/MM/dd)'
+        required: true
         default: ''
       general:
-        description: 'general'
+        description: 'General'
         required: false
         default: ''
 
@@ -49,7 +45,6 @@ jobs:
         --command "${{ github.event.inputs.command }}"
         --actionDate "${{ github.event.inputs.actionDate }}"
         --eventDate "${{ github.event.inputs.eventDate }}"
-        --nextDate "${{ github.event.inputs.nextDate }}"
         --general "${{ github.event.inputs.general }}"
     - name: Git
       run: |

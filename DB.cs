@@ -90,7 +90,7 @@ public class Table<T> : TableBase, IEnumerable<T> where T : EntryBase, new()
         set
         {
             var i = m_Rows.FindIndex(r => r.Id == id);
-            if(i < m_Rows.Count)
+            if(0 <= i && i < m_Rows.Count)
                 m_Rows[i] = value;
             else
                 m_Rows.Add(value);

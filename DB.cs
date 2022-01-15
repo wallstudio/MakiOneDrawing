@@ -119,23 +119,21 @@ public class Table<T> : TableBase, IEnumerable<T> where T : EntryBase, new()
 
     public override void Store(SheetsService service, string spreadSheetId)
     {
-        var columnLabels = m_RawData.Values.First().Select(o => o.ToString()).ToArray();
-        for (int row = 1, rowLimit = m_Rows.Count; row < rowLimit; row++)
+        var columnLabels = m_RawData.Values[0].Select(o => o.ToString()).ToArray();
+        for (int r = 0; r < m_Rows.Count; r++)
         {
-            if (m_RawData.Values.Count > row)
+            if (m_RawData.Values.ElementAtOrDefault(r + 1) is {} raw)
             {
-                var cellMap = m_Rows[row-1].Serialize();
-                var cells = columnLabels.Select(l => cellMap[l]).ToArray();
-                m_RawData.Values[row].Clear();
-                foreach (var cell in cells)
-                {
-                    m_RawData.Values[row].Add(cell);
-                }
+                raw.Clear();
             }
             else
             {
-                m_RawData.Values.Add(m_Rows[row].Serialize().OfType<object>().ToList());
+                m_RawData.Values.Add(raw = new List<object>());
             }
+
+            var entry = m_Rows[r].Serialize();
+            var cells = columnLabels.Select(l => entry[l]).ToArray();
+            foreach (var cell in cells) raw.Add(cell);
         }
         base.Store(service, spreadSheetId);
     }

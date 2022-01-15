@@ -47,7 +47,7 @@ public class Schedule : EntryBase
     }
 }
 
-[TableName("post2")]
+[TableName("post3")]
 public class Post : EntryBase
 {
     [Column] public string ScheduleId { get; set; }

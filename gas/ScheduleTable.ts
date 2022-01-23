@@ -4,8 +4,8 @@ class ScheduleTable {
 	constructor(spreadSheetId: string) {
 		const spreadsheet = SpreadsheetApp.openById(spreadSheetId);
 		const schedule = spreadsheet.getSheetByName("schedule3");
-		const labels = schedule.getRange(1, 1, 1, schedule.getLastColumn()).getValues()[0];
-		const rows = schedule.getRange(2, 1, schedule.getLastRow(), schedule.getLastColumn()).getValues();
+		const labels = schedule.getRange(1, 1, 1, schedule.getLastColumn()).getDisplayValues()[0];
+		const rows = schedule.getRange(2, 1, schedule.getLastRow(), schedule.getLastColumn()).getDisplayValues();
 		for (const row of rows)
         {
             if(!row[labels.indexOf("Id")]

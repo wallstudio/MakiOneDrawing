@@ -32,6 +32,16 @@ public class Schedule : EntryBase
         AccId = long.TryParse(columns[nameof(AccId)], out var accId) ? accId : null;
     }
 
+    public override Dictionary<string, string> Serialize()
+    {
+        var columns = base.Serialize();
+        columns[nameof(PreTime)] = PreTime is {} preTime ? $"{(int)preTime.TotalHours:D2}:{preTime.Minutes:D2}:{preTime.Seconds:D2}" : "";
+        columns[nameof(BeginTime)] = BeginTime is {} beginTime ? $"{(int)beginTime.TotalHours:D2}:{beginTime.Minutes:D2}:{beginTime.Seconds:D2}" : "";
+        columns[nameof(EndTime)] = EndTime is {} endTime ? $"{(int)endTime.TotalHours:D2}:{endTime.Minutes:D2}:{endTime.Seconds:D2}" : "";
+        columns[nameof(AccTime)] = AccTime is {} accTime ? $"{(int)accTime.TotalHours:D2}:{accTime.Minutes:D2}:{accTime.Seconds:D2}" : "";
+        return columns;
+    }
+
     static bool TryParseTimeOffset(string input, out TimeSpan offset)
     {
         if (Regex.Match(input, @"(?<sign>[+-]?)(?<hours>\d+)\:(?<minutes>\d+)") is not { Success: true, Groups: var groups })

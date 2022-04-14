@@ -6,12 +6,12 @@
 
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
-| 1 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 19 作品 |
-| 2 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1486372510174441473/_RmYc5el_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 12 作品 |
-| 3 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1493239118142525445/mWndsmdZ_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 11 作品 |
-| 4 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 9 作品 |
+| 1 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 20 作品 |
+| 2 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1486372510174441473/_RmYc5el_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 13 作品 |
+| 3 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1493239118142525445/mWndsmdZ_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 12 作品 |
+| 4 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 10 作品 |
 | 5 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1478608692870549504/tH6Xvitc_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 6 作品 |
-| 6 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | 5 作品 |
+| 6 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | 6 作品 |
 | 7 | [![@crn_ss](https://pbs.twimg.com/profile_images/1503338784301015046/5xH3cbpR_bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 4 作品 |
 | 8 | [![@xqcM5pAKDe1XRDA](https://pbs.twimg.com/profile_images/1492509778920472577/JOdXD-6y_bigger.jpg)](https://twitter.com/xqcM5pAKDe1XRDA) | [@xqcM5pAKDe1XRDA](https://twitter.com/xqcM5pAKDe1XRDA) | 2 作品 |
 | 9 | [![@sayomakivoice](https://pbs.twimg.com/profile_images/1448653317018558469/ptNwxiQR_bigger.jpg)](https://twitter.com/sayomakivoice) | [@sayomakivoice](https://twitter.com/sayomakivoice) | 1 作品 |

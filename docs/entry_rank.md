@@ -7,9 +7,9 @@
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
 | 1 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 26 回 |
-| 2 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 21 回 |
-| 3 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1545071320408690688/_BfCXjqc_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 20 回 |
-| 4 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | 14 回 |
+| 2 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 22 回 |
+| 3 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1545071320408690688/_BfCXjqc_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 21 回 |
+| 4 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | 15 回 |
 | 5 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 11 回 |
 | 6 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1478608692870549504/tH6Xvitc_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 7 回 |
 | 7 | [![@xqcM5pAKDe1XRDA](https://pbs.twimg.com/profile_images/1492509778920472577/JOdXD-6y_bigger.jpg)](https://twitter.com/xqcM5pAKDe1XRDA) | [@xqcM5pAKDe1XRDA](https://twitter.com/xqcM5pAKDe1XRDA) | 5 回 |

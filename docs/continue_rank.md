@@ -6,14 +6,14 @@
 
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
-| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 25 回連続 |
-| 2 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 3 回連続 |
-| 3 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1570091559554785282/FdNaSmd0_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 0 回連続 |
-| 4 | [![@crn_ss](https://pbs.twimg.com/profile_images/1503338784301015046/5xH3cbpR_bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 0 回連続 |
-| 5 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 0 回連続 |
+| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 26 回連続 |
+| 2 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 4 回連続 |
+| 3 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1578412318513594369/HSC_r9Rk_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 1 回連続 |
+| 4 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 1 回連続 |
+| 5 | [![@crn_ss](https://pbs.twimg.com/profile_images/1503338784301015046/5xH3cbpR_bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 0 回連続 |
 | 6 | [![@sayomakivoice](https://pbs.twimg.com/profile_images/1448653317018558469/ptNwxiQR_bigger.jpg)](https://twitter.com/sayomakivoice) | [@sayomakivoice](https://twitter.com/sayomakivoice) | 0 回連続 |
 | 7 | [![@matwusi0141](https://pbs.twimg.com/profile_images/1527193201073098752/7xgP63gw_bigger.jpg)](https://twitter.com/matwusi0141) | [@matwusi0141](https://twitter.com/matwusi0141) | 0 回連続 |
-| 8 | [![@EXMA01](https://pbs.twimg.com/profile_images/1577104642810707968/w1kCtCEF_bigger.jpg)](https://twitter.com/EXMA01) | [@EXMA01](https://twitter.com/EXMA01) | 0 回連続 |
+| 8 | [![@EXMA01](https://pbs.twimg.com/profile_images/1577352056662552576/gTrli9-t_bigger.jpg)](https://twitter.com/EXMA01) | [@EXMA01](https://twitter.com/EXMA01) | 0 回連続 |
 | 9 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1570465324256075776/T0Ecljzj_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 0 回連続 |
 | 10 | [![@otabe_miyasato](https://pbs.twimg.com/profile_images/1246375358791700481/YzJl43g0_bigger.jpg)](https://twitter.com/otabe_miyasato) | [@otabe_miyasato](https://twitter.com/otabe_miyasato) | 0 回連続 |
 | 11 | [![@nknm3422](https://pbs.twimg.com/profile_images/1475131279079514118/rYCoWhVa_bigger.jpg)](https://twitter.com/nknm3422) | [@nknm3422](https://twitter.com/nknm3422) | 0 回連続 |

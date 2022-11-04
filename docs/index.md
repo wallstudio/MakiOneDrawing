@@ -6,8 +6,8 @@
 
 | 1️⃣ | 2️⃣ | 3️⃣ | 4️⃣ | 5️⃣ | 6️⃣ | 7️⃣ | 8️⃣ | 9️⃣ | 🔟 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [![](https://pbs.twimg.com/media/Ffwnl_hVUAEWT3F.png:thumb)](https://twitter.com/Kiriya_syumi/status/1584185001142149121) | [![](https://pbs.twimg.com/media/FfwvOPeUYAEaRYV.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1584193301988589568) | [![](https://pbs.twimg.com/media/Ffw7aDyaMAEb2_X.jpg:thumb)](https://twitter.com/kaosakijin/status/1584206579326681089) | [![](https://pbs.twimg.com/media/Fe9MDvzagAElLLj.jpg:thumb)](https://twitter.com/kaosakijin/status/1580565974402859008) | [![](https://pbs.twimg.com/media/Fe9P1tbVQAAFyRc.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1580569936765759488) | [![](https://pbs.twimg.com/media/Fe9Tb-baMAAocAD.png:thumb)](https://twitter.com/uwag0/status/1580574239098564608) | [![](https://pbs.twimg.com/media/Fe9gqPAaEAIJNlV.jpg:thumb)](https://twitter.com/yukawallstudio/status/1580588831409332230) | [![](https://pbs.twimg.com/media/FeJpS2XVUAAXWO1.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1576938972026048512) | [![](https://pbs.twimg.com/media/FeJ_ovtaYAAPXsR.jpg:thumb)](https://twitter.com/yukawallstudio/status/1576963344040591365) | [![](https://pbs.twimg.com/media/FeKB3IzacAEx5kl.png:thumb)](https://twitter.com/uwag0/status/1576965705429569536) |
-| [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@kaosakijin](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@uwag0](https://twitter.com/uwag0) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@uwag0](https://twitter.com/uwag0) |
+| [![](https://pbs.twimg.com/media/FgpWDuzaEAAqTdz.png:thumb)](https://twitter.com/Kiriya_syumi/status/1588177135566753792) | [![](https://pbs.twimg.com/media/FgpVsc3UYAImR_-.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1588177158521835520) | [![](https://pbs.twimg.com/media/Ffwnl_hVUAEWT3F.png:thumb)](https://twitter.com/Kiriya_syumi/status/1584185001142149121) | [![](https://pbs.twimg.com/media/FfwvOPeUYAEaRYV.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1584193301988589568) | [![](https://pbs.twimg.com/media/Ffw7aDyaMAEb2_X.jpg:thumb)](https://twitter.com/kaosakijin/status/1584206579326681089) | [![](https://pbs.twimg.com/media/Fe9MDvzagAElLLj.jpg:thumb)](https://twitter.com/kaosakijin/status/1580565974402859008) | [![](https://pbs.twimg.com/media/Fe9P1tbVQAAFyRc.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1580569936765759488) | [![](https://pbs.twimg.com/media/Fe9Tb-baMAAocAD.png:thumb)](https://twitter.com/uwag0/status/1580574239098564608) | [![](https://pbs.twimg.com/media/Fe9gqPAaEAIJNlV.jpg:thumb)](https://twitter.com/yukawallstudio/status/1580588831409332230) | [![](https://pbs.twimg.com/media/FeJpS2XVUAAXWO1.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1576938972026048512) |
+| [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@kaosakijin](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@uwag0](https://twitter.com/uwag0) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) |
 
 
 [全てみる](recentry)
@@ -21,7 +21,7 @@
 | :---: | :---: | :---: |
 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [![@kaosakijin](https://pbs.twimg.com/profile_images/1578412318513594369/HSC_r9Rk_bigger.jpg)](https://twitter.com/kaosakijin) |
 | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@kaosakijin](https://twitter.com/kaosakijin) |
-| 32 作品 | 30 作品 | 27 作品 |
+| 32 作品 | 31 作品 | 27 作品 |
 
 [全てみる](post_rank)
 
@@ -33,7 +33,7 @@
 | :---: | :---: | :---: |
 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [![@kaosakijin](https://pbs.twimg.com/profile_images/1578412318513594369/HSC_r9Rk_bigger.jpg)](https://twitter.com/kaosakijin) |
 | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@kaosakijin](https://twitter.com/kaosakijin) |
-| 31 回 | 29 回 | 27 回 |
+| 31 回 | 30 回 | 27 回 |
 
 [全てみる](entry_rank)
 
@@ -43,9 +43,9 @@
 
 | 🥇 | 🥈 | 🥉 |
 | :---: | :---: | :---: |
-| [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [![@kaosakijin](https://pbs.twimg.com/profile_images/1578412318513594369/HSC_r9Rk_bigger.jpg)](https://twitter.com/kaosakijin) |
-| [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@yukawallstudio](https://twitter.com/yukawallstudio) | [@kaosakijin](https://twitter.com/kaosakijin) |
-| 27 回連続 | 5 回連続 | 2 回連続 |
+| [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1535466170203406336/nsybet37_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [![@kaosakijin](https://pbs.twimg.com/profile_images/1578412318513594369/HSC_r9Rk_bigger.jpg)](https://twitter.com/kaosakijin) | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) |
+| [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | [@kaosakijin](https://twitter.com/kaosakijin) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) |
+| 28 回連続 | 3 回連続 | 1 回連続 |
 
 [全てみる](continue_rank)
 

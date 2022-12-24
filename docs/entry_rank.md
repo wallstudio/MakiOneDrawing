@@ -6,10 +6,10 @@
 
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
-| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1601437065693974528/zi3MsWFX_bigger.png)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 33 回 |
-| 2 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 33 回 |
+| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1601437065693974528/zi3MsWFX_bigger.png)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 34 回 |
+| 2 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 34 回 |
 | 3 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1578412318513594369/HSC_r9Rk_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 28 回 |
-| 4 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | 20 回 |
+| 4 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | 21 回 |
 | 5 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 17 回 |
 | 6 | [![@shishi10_n](https://pbs.twimg.com/profile_images/1570465324256075776/T0Ecljzj_bigger.jpg)](https://twitter.com/shishi10_n) | [@shishi10_n](https://twitter.com/shishi10_n) | 8 回 |
 | 7 | [![@xqcM5pAKDe1XRDA](https://pbs.twimg.com/profile_images/1492509778920472577/JOdXD-6y_bigger.jpg)](https://twitter.com/xqcM5pAKDe1XRDA) | [@xqcM5pAKDe1XRDA](https://twitter.com/xqcM5pAKDe1XRDA) | 5 回 |

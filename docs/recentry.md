@@ -6,6 +6,7 @@
 
 | サムネイル | イベント日 | アイコン | ユーザー名 |
 | :--: | :--: | :--: | :--: |
+| [![](https://pbs.twimg.com/media/FmW83dfaEAQ0tES.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1613903848133001218) | 2023/01/13 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1607177446725660672/T-PW5Yep_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) |
 | [![](https://pbs.twimg.com/media/FljeU3maYAY-zIY.jpg:thumb)](https://twitter.com/CmADqkrAWf0Xmx5/status/1610281471864111104) | 2023/01/03 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1607177446725660672/T-PW5Yep_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) |
 | [![](https://pbs.twimg.com/media/Flj0yOqaMAEf9dK.jpg:thumb)](https://twitter.com/kaosakijin/status/1610306179540082689) | 2023/01/03 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1609203496691314689/T8sj5JLw_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) |
 | [![](https://pbs.twimg.com/media/Fkq6GtKUAAAYOCg.png:thumb)](https://twitter.com/Kiriya_syumi/status/1606302139105497088) | 2022/12/23 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) |

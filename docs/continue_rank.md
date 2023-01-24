@@ -6,8 +6,8 @@
 
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
-| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1607177446725660672/T-PW5Yep_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 34 回連続 |
-| 2 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1609203496691314689/T8sj5JLw_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 1 回連続 |
+| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1607177446725660672/T-PW5Yep_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 35 回連続 |
+| 2 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1609203496691314689/T8sj5JLw_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 0 回連続 |
 | 3 | [![@crn_ss](https://pbs.twimg.com/profile_images/1593855176632258561/AH6IZqEg_bigger.jpg)](https://twitter.com/crn_ss) | [@crn_ss](https://twitter.com/crn_ss) | 0 回連続 |
 | 4 | [![@uwag0](https://pbs.twimg.com/profile_images/505203180431360000/JXmdpqS-_bigger.jpeg)](https://twitter.com/uwag0) | [@uwag0](https://twitter.com/uwag0) | 0 回連続 |
 | 5 | [![@sayomakivoice](https://pbs.twimg.com/profile_images/1448653317018558469/ptNwxiQR_bigger.jpg)](https://twitter.com/sayomakivoice) | [@sayomakivoice](https://twitter.com/sayomakivoice) | 0 回連続 |

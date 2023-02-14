@@ -6,7 +6,7 @@
 
 | No | アイコン | ユーザー名 | スコア |
 | :--: | :--: | :--: | :--: |
-| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1607177446725660672/T-PW5Yep_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 38 回 |
+| 1 | [![@CmADqkrAWf0Xmx5](https://pbs.twimg.com/profile_images/1607177446725660672/T-PW5Yep_bigger.jpg)](https://twitter.com/CmADqkrAWf0Xmx5) | [@CmADqkrAWf0Xmx5](https://twitter.com/CmADqkrAWf0Xmx5) | 39 回 |
 | 2 | [![@yukawallstudio](https://pbs.twimg.com/profile_images/950043565232611328/_YQtygm4_bigger.jpg)](https://twitter.com/yukawallstudio) | [@yukawallstudio](https://twitter.com/yukawallstudio) | 35 回 |
 | 3 | [![@kaosakijin](https://pbs.twimg.com/profile_images/1609203496691314689/T8sj5JLw_bigger.jpg)](https://twitter.com/kaosakijin) | [@kaosakijin](https://twitter.com/kaosakijin) | 30 回 |
 | 4 | [![@Kiriya_syumi](https://pbs.twimg.com/profile_images/1438558570203672580/bwtrZ1a__bigger.jpg)](https://twitter.com/Kiriya_syumi) | [@Kiriya_syumi](https://twitter.com/Kiriya_syumi) | 21 回 |
